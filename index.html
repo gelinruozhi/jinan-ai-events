@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>济南 AI 线下活动盘点（2026年10月底–12月） · 截至2026-10-26</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2310233f'/%3E%3Ctext x='16' y='22' font-family='Consolas,monospace' font-size='14' font-weight='700' fill='%23f5a623' text-anchor='middle'%3E济%3C/text%3E%3C/svg%3E">
+<title>AI活动与学生福利盘点（济南线下 + 线上） · 截至2026-10-26</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2310233f'/%3E%3Ctext x='16' y='22' font-family='Consolas,monospace' font-size='14' font-weight='700' fill='%23f5a623' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
 <style>
 :root{
   --ink:#17202e; --ink-2:#41506a; --ink-3:#6b7688;
-  --paper:#f5f6f8; --card:#ffffff; --line:#e3e6ec; --line-2:#eef0f4;
+  --paper:#f4f6f9; --card:#ffffff; --line:#e1e5ec; --line-2:#eef0f4;
   --navy:#10233f; --navy-2:#1b3560;
-  --amber:#e8841f; --amber-soft:#fdf3e4;
+  --amber:#e8841f; --amber-deep:#c86a0e; --amber-soft:#fdf3e4;
   --red:#d0432e; --red-soft:#fcebe8;
   --blue:#2b5fd9; --blue-soft:#e9f0fd;
   --green:#147a5c; --green-soft:#e6f4ef;
@@ -23,325 +23,895 @@ html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--blue);text-decoration:none;word-break:break-all}
 a:hover{text-decoration:underline}
-.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
 
-.nav{position:sticky;top:0;z-index:50;background:rgba(16,35,63,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:18px;height:54px;overflow-x:auto}
-.nav-brand{color:#fff;font-weight:700;font-size:15px;white-space:nowrap;display:flex;align-items:center;gap:8px}
-.nav-brand .b{font-family:var(--mono);color:var(--amber);font-weight:700}
-.nav-links{display:flex;gap:4px;margin-left:auto}
-.nav-links a{color:#b9c6dd;font-size:13px;padding:6px 10px;border-radius:6px;white-space:nowrap}
+/* ===== 阅读进度条 ===== */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),#f5c15e);z-index:100}
+
+/* ===== 导航 ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(16,35,63,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:14px;height:52px;overflow-x:auto;scrollbar-width:none}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav-brand{color:#fff;font-weight:700;white-space:nowrap;font-size:14.5px;display:flex;align-items:center;gap:8px}
+.nav-brand .b{font-family:var(--mono);color:var(--amber)}
+.nav-links{display:flex;gap:2px;margin-left:auto}
+.nav-links a{color:#aebbd5;font-size:12.5px;padding:5px 9px;border-radius:6px;white-space:nowrap;transition:all .15s}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.08);text-decoration:none}
+.nav-links a.active{color:#fff;background:var(--amber);font-weight:600}
 
+/* ===== Hero ===== */
 .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden;border-bottom:3px solid var(--amber)}
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:34px 34px;pointer-events:none}
-.hero-inner{position:relative;padding:52px 0 44px}
+.hero-inner{position:relative;padding:48px 0 42px}
 .hero .kicker{font-family:var(--mono);color:var(--amber);font-size:13px;letter-spacing:2px;margin-bottom:14px}
-.hero h1{font-size:33px;line-height:1.3;font-weight:800;letter-spacing:.5px}
+.hero h1{font-size:32px;line-height:1.32;font-weight:800;letter-spacing:.5px}
 .hero h1 .hl{color:var(--amber)}
-.hero .sub{margin-top:14px;color:#c3cfe2;font-size:15px;max-width:840px}
-.hero .meta{margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
-.hero .meta span{font-family:var(--mono);font-size:12.5px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:5px 11px;border-radius:20px;color:#dbe4f2}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px;max-width:900px}
-.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 16px}
-.stat .n{font-family:var(--mono);font-size:26px;font-weight:700;color:var(--amber);line-height:1.1}
-.stat .t{font-size:12.5px;color:#aebcd3;margin-top:4px}
+.hero .sub{margin-top:14px;color:#c3cfe2;font-size:14.5px;max-width:860px}
+.hero .meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:9px}
+.hero .meta span{font-family:var(--mono);font-size:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:4px 11px;border-radius:20px;color:#dbe4f2}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:26px}
+@media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 15px}
+.stat .n{font-family:var(--mono);font-size:25px;font-weight:700;color:var(--amber);line-height:1.1}
+.stat .t{font-size:12px;color:#aebcd3;margin-top:3px}
 
-section{padding:42px 0 8px}
-.sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:20px}
-.sec-head h2{font-size:22px;font-weight:800;color:var(--navy)}
-.sec-head .en{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:1px}
-.sec-head .count{margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--red);font-weight:700}
-.lead{color:var(--ink-2);font-size:14px;margin-bottom:18px;max-width:980px}
-
-.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
-.toolbar input{flex:1;min-width:200px;padding:9px 13px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--sans);background:#fff}
+/* ===== 筛选工具栏 ===== */
+.filterbar{position:sticky;top:52px;z-index:40;background:rgba(244,246,249,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 0}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.toolbar input{flex:1;min-width:190px;padding:9px 13px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:var(--sans);background:#fff}
 .toolbar input:focus{outline:none;border-color:var(--blue)}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.toolbar select{padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;background:#fff;font-family:var(--sans);color:var(--ink-2)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
 .chip{font-size:12.5px;padding:5px 12px;border-radius:20px;border:1px solid var(--line);background:#fff;color:var(--ink-2);cursor:pointer;user-select:none}
 .chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
-.chip.quick{background:var(--amber-soft);border-color:#f0d3a8;color:#8a5a1d}
-.chip.quick.on{background:var(--amber);color:#fff;border-color:var(--amber)}
+.chip.q{background:var(--amber-soft);border-color:#f0d3a8;color:#8a5a1d}
+.chip.q.on{background:var(--amber);color:#fff;border-color:var(--amber)}
+.chip.quick{background:var(--green-soft);border-color:#bfe0d3;color:#0e6a4f}
+.chip.quick.on{background:var(--green);color:#fff;border-color:var(--green)}
 
-.tbl-wrap{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;overflow-x:auto}
-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13.5px}
-th{background:var(--navy);color:#fff;text-align:left;padding:11px 12px;font-weight:600;font-size:13px;white-space:nowrap}
-td{padding:12px;border-top:1px solid var(--line-2);vertical-align:top;word-break:break-word}
-tr:nth-child(even) td{background:#fafbfc}
-.act-name{font-weight:700;color:var(--navy);display:block;margin-bottom:3px}
-.host{font-size:12.5px;color:var(--ink-3)}
-.topic{color:var(--ink-2);font-size:13px}
-.period{font-family:var(--mono);font-size:12px;color:var(--ink-2);word-break:break-all}
-.venue{font-weight:600;font-size:13px;color:var(--ink)}
-.area{display:inline-block;font-size:11px;background:var(--blue-soft);color:var(--blue);padding:1px 7px;border-radius:5px;margin-bottom:3px}
-.addr{font-size:12px;color:var(--ink-3)}
-.fee{font-weight:600;font-size:12.5px}
-.fee.free{color:var(--green)}
-.fee.paid{color:var(--red)}
-.fee.unk{color:var(--ink-3);font-weight:500}
-.cell-link{font-size:12.5px}
-.tag{display:inline-block;font-size:11px;padding:2px 7px;border-radius:20px;font-weight:600;white-space:nowrap}
-.tag.open{background:var(--red-soft);color:var(--red)}
-.tag.soon{background:var(--amber-soft);color:var(--amber)}
-.tag.closed{background:var(--gray-soft);color:var(--gray)}
-.tag.ended{background:var(--gray-soft);color:var(--gray)}
-.tag.yes{background:var(--green-soft);color:var(--green);font-size:11px;padding:2px 6px;border-radius:5px}
-.tag.no{background:var(--gray-soft);color:var(--gray);font-size:11px;padding:2px 6px;border-radius:5px}
-.tag.maybe{background:var(--amber-soft);color:var(--amber);font-size:11px;padding:2px 6px;border-radius:5px}
+/* ===== 时间线 ===== */
+main{padding:26px 0 40px}
+.tl-wrap{position:relative;padding-left:26px;margin-top:8px}
+.tl-axis{position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--navy),var(--line))}
+.tl-wrap.online .tl-axis{background:linear-gradient(var(--blue),var(--line))}
+.tl-head{position:relative;margin:34px 0 16px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.tl-head:first-child{margin-top:6px}
+.tl-head .dot{position:absolute;left:-26px;top:3px;width:16px;height:16px;border-radius:50%;background:var(--navy);border:3px solid #fff;box-shadow:0 0 0 2px var(--navy)}
+.tl-wrap.online .tl-head .dot{background:var(--blue);box-shadow:0 0 0 2px var(--blue)}
+.tl-head h2{font-size:20px;font-weight:800;color:var(--navy)}
+.tl-head .en{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:1px}
+.tl-head .cnt{margin-left:auto;font-family:var(--mono);font-size:12.5px;color:var(--gray);background:#fff;border:1px solid var(--line);border-radius:20px;padding:2px 12px}
+.tl-head .tip{width:100%;font-size:13px;color:var(--ink-2);margin-top:2px}
 
-.cards{display:none}
-.mini-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:10px}
-.mini-card .mc-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
-.mini-card .mc-name{font-weight:700;color:var(--navy);font-size:14.5px}
-.mini-card .mc-row{font-size:13px;color:var(--ink-2);margin-top:5px}
-.mini-card .mc-row b{color:var(--ink);font-weight:600}
-@media(max-width:820px){
-  .tbl-wrap{display:none}
-  .cards{display:block}
-  .hero h1{font-size:24px}
-  .stats{grid-template-columns:repeat(2,1fr)}
-}
+/* ===== 卡片 ===== */
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(16,35,63,.05);transition:box-shadow .2s,transform .2s}
+.card:hover{box-shadow:0 6px 22px rgba(16,35,63,.10);transform:translateY(-1px)}
+.card .dot{position:absolute;left:-25px;top:26px;width:12px;height:12px;border-radius:50%;background:#fff;border:3px solid var(--amber)}
+.tl-wrap.online .card .dot{border-color:var(--blue)}
+.card.ended{opacity:.66;filter:grayscale(.55)}
+.card.ended .dot{border-color:var(--gray)}
+.card.ended:hover{box-shadow:0 1px 3px rgba(16,35,63,.05);transform:none}
+.card-head{display:flex;gap:16px;align-items:flex-start}
+.card-num{flex:none;width:46px;height:46px;border-radius:11px;background:var(--navy);color:#fff;font-family:var(--mono);font-size:19px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.card.ended .card-num{background:var(--gray)}
+.tl-wrap.online .card-num{background:var(--blue)}
+.head-main{flex:1;min-width:0}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:7px}
+.bd{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 10px;border-radius:20px;white-space:nowrap}
+.bd.open{background:var(--red-soft);color:var(--red)}
+.bd.hot{background:var(--red);color:#fff}
+.bd.soon{background:var(--amber-soft);color:var(--amber-deep)}
+.bd.ended{background:var(--gray-soft);color:var(--gray)}
+.bd.long{background:var(--blue-soft);color:var(--blue)}
+.bd.free{background:var(--green-soft);color:var(--green)}
+.bd.stu{background:var(--green-soft);color:var(--green)}
+.bd.area{background:#fff;border:1px solid var(--line);color:var(--ink-2);font-weight:500}
+.bd.online{background:var(--blue-soft);color:var(--blue)}
+.bd.next{background:var(--gray-soft);color:var(--gray)}
+.head-main h3{font-size:17.5px;line-height:1.45;color:var(--navy);font-weight:800}
+.card.ended .head-main h3{color:var(--ink-2)}
+.host{font-size:13px;color:var(--ink-3);margin-top:2px}
+.info-grid{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:10px;font-size:13px}
+.info-grid .it{display:flex;gap:6px;align-items:baseline}
+.info-grid .it b{color:var(--ink-3);font-weight:600;font-size:12px;flex:none}
+.info-grid .it span{color:var(--ink)}
+.info-grid .loc{width:100%}
+.info-grid .fee-v{color:var(--green);font-weight:600}
+.info-grid .fee-v.paid{color:var(--red)}
+.info-grid .fee-v.unk{color:var(--ink-3);font-weight:500}
 
-.nf-group{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
-.nf-group h3{font-size:15px;color:var(--navy);margin-bottom:4px}
-.nf-group h3 .num{font-family:var(--mono);color:var(--ink-3);font-size:12.5px;font-weight:400;margin-left:8px}
-.nf-group .gnote{font-size:12.5px;color:var(--ink-3);margin-bottom:10px}
-.tags{display:flex;flex-wrap:wrap;gap:7px}
-.tagitem{font-size:12.5px;background:var(--gray-soft);color:var(--ink-2);padding:3px 10px;border-radius:6px}
+/* 四小块 */
+.blocks{display:grid;grid-template-columns:1fr;gap:10px;margin-top:15px}
+@media(min-width:720px){.blocks{grid-template-columns:1fr 1fr}}
+.blk{border-radius:10px;padding:11px 14px;font-size:13.5px}
+.blk h4{font-size:13px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.blk h4 .ic{width:8px;height:8px;border-radius:2px;flex:none}
+.blk ul{list-style:none}
+.blk li{position:relative;padding:2px 0 2px 16px;color:var(--ink-2);line-height:1.6;background-repeat:no-repeat;background-position:2px 11px;background-size:6px 6px}
+.blk.bf{background:var(--amber-soft);grid-column:1/-1}
+.blk.bf h4{color:var(--amber-deep)}
+.blk.bf li{background-image:radial-gradient(circle,var(--amber) 2.5px,transparent 3px)}
+.blk.bp{background:var(--green-soft)}
+.blk.bp h4{color:var(--green)}
+.blk.bp li{background-image:radial-gradient(circle,var(--green) 2.5px,transparent 3px)}
+.blk.bc{background:var(--red-soft)}
+.blk.bc h4{color:var(--red)}
+.blk.bc li{background-image:radial-gradient(circle,var(--red) 2.5px,transparent 3px)}
+.note-card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:12px;padding:16px 20px;margin-bottom:16px}
+.note-card h3{font-size:14px;color:var(--navy);margin-bottom:10px}
+.note-card ul{list-style:none}
+.note-card li{position:relative;padding:6px 0 6px 20px;font-size:13.5px;color:var(--ink-2);line-height:1.7;border-bottom:1px dashed var(--line-2);background-repeat:no-repeat;background-position:2px 13px;background-size:7px 7px;background-image:radial-gradient(circle,var(--blue) 3px,transparent 3.5px)}
+.note-card li:last-child{border-bottom:none}
+.blk.bv{grid-column:1/-1;background:var(--navy);color:#e7edf7;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.blk.bv h4{color:var(--amber);margin:0;flex:none}
+.blk.bv .txt{flex:1;min-width:200px}
+.vtag{flex:none;font-size:12.5px;font-weight:700;padding:4px 14px;border-radius:20px;background:var(--amber);color:#fff;white-space:nowrap}
+.vtag.t1{background:var(--amber)}
+.vtag.t2{background:var(--blue)}
+.vtag.t3{background:#6b7688}
+.vtag.t4{background:#5b6b82}
+.vtag.t5{background:var(--gray)}
+.card.ended .blk.bv{background:#44506a}
+.card.ended .blk.bf{background:var(--gray-soft)}
+.card.ended .blk.bf h4{color:var(--gray)}
+.card.ended .blk.bf li::before{background:var(--gray)}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:13px;font-size:13px;padding-top:11px;border-top:1px dashed var(--line)}
+.links .lk{display:inline-flex;align-items:center;gap:4px}
+.links .lk b{color:var(--ink-3);font-weight:600}
+.links .lk span{color:var(--ink-3)}
+.no-match{display:none;text-align:center;color:var(--ink-3);padding:30px;font-size:14px}
 
-.list-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:12px}
+/* ===== 通用区块 ===== */
+section{scroll-margin-top:100px}
+.list-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
 .list-card h3{font-size:15.5px;color:var(--navy);margin-bottom:10px}
 .list-card ul{list-style:none}
-.list-card li{position:relative;padding:7px 0 7px 22px;font-size:13.5px;color:var(--ink-2);border-bottom:1px dashed var(--line-2)}
+.list-card li{position:relative;padding:6px 0 6px 20px;font-size:13.5px;color:var(--ink-2);border-bottom:1px dashed var(--line-2)}
 .list-card li:last-child{border-bottom:none}
 .list-card li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:2px;background:var(--amber)}
 .list-card li b{color:var(--ink)}
-.warn-box{background:var(--amber-soft);border:1px solid #f0d3a8;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#6b4a1f;margin-bottom:12px}
-.info-box{background:var(--blue-soft);border:1px solid #c4d6f5;border-radius:10px;padding:14px 18px;font-size:13.5px;color:#2b3f6b;margin-bottom:12px}
-.empty{padding:30px;text-align:center;color:var(--ink-3);font-size:14px}
-footer{background:var(--navy);color:#aebcd3;margin-top:50px;padding:30px 0;font-size:12.5px}
+.warn-box{background:var(--amber-soft);border:1px solid #f0d3a8;color:#7c531d;border-radius:10px;padding:12px 16px;font-size:13.5px;margin-bottom:14px}
+.nf-group{background:#fff;border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin-bottom:11px}
+.nf-group h3{font-size:14.5px;color:var(--navy);margin-bottom:4px}
+.nf-group h3 .num{font-family:var(--mono);color:var(--ink-3);font-size:12px;font-weight:400;margin-left:8px}
+.nf-group .gnote{font-size:12.5px;color:var(--ink-3);margin-bottom:9px}
+.tagitems{display:flex;flex-wrap:wrap;gap:7px}
+.tagitems .tagitem{font-size:12.5px;background:var(--gray-soft);color:var(--ink-2);padding:3px 10px;border-radius:6px}
+.sec-head{display:flex;align-items:baseline;gap:12px;border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:18px}
+.sec-head h2{font-size:21px;font-weight:800;color:var(--navy)}
+.sec-head .en{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.lead{color:var(--ink-2);font-size:14px;margin-bottom:16px;max-width:100%}
+.foot{background:var(--navy);color:#aebcd5;font-size:12.5px;padding:26px 0;margin-top:40px}
+.foot .wrap{line-height:1.9}
+
+/* ===== 回到顶部 ===== */
+#toTop{position:fixed;right:20px;bottom:24px;width:46px;height:46px;border-radius:50%;background:var(--navy);color:var(--amber);border:2px solid var(--amber);font-size:19px;cursor:pointer;display:none;align-items:center;justify-content:center;z-index:60;box-shadow:0 4px 14px rgba(16,35,63,.3)}
+#toTop.show{display:flex}
+
+@media(max-width:719px){
+  .hero h1{font-size:25px}
+  .hero-inner{padding:36px 0 32px}
+  .wrap{padding:0 15px}
+  .tl-wrap{padding-left:20px}
+  .tl-axis{left:5px}
+  .tl-head .dot{left:-20px;width:12px;height:12px}
+  .card .dot{left:-20px;top:24px;width:10px;height:10px}
+  .card{padding:16px 15px;border-radius:12px}
+  .card-head{gap:11px}
+  .card-num{width:38px;height:38px;font-size:16px;border-radius:9px}
+  .head-main h3{font-size:16px}
+  .blk{padding:10px 12px}
+  .nav-links a{font-size:12px;padding:5px 8px}
+}
 </style>
 </head>
 <body>
+<div id="progress"></div>
 
 <nav class="nav"><div class="nav-inner">
-  <div class="nav-brand"><span class="b">济南</span> AI 线下活动盘点</div>
-  <div class="nav-links">
-    <a href="#events">活动清单</a>
-    <a href="#ended">刚结束/复盘</a>
+  <div class="nav-brand">济南 AI · <span class="b">活动与学生福利</span></div>
+  <div class="nav-links" id="navLinks">
+    <a href="#week">本周可去</a>
+    <a href="#deadline">本周截止</a>
+    <a href="#nov">11月</a>
+    <a href="#dec">12月</a>
+    <a href="#ended">已结束</a>
+    <a href="#olA">线上赛事</a>
+    <a href="#olB">线上直播</a>
+    <a href="#olC">学生福利</a>
+    <a href="#olD">训练营</a>
     <a href="#pending">待复核</a>
-    <a href="#notfound">未发现清单</a>
-    <a href="#method">方法说明</a>
+    <a href="#notfound">未发现</a>
   </div>
 </div></nav>
 
 <header class="hero"><div class="wrap"><div class="hero-inner">
-  <div class="kicker">JINAN OFFLINE AI EVENTS · 2026-10-26 → 2026-12</div>
-  <h1>在济南，<span class="hl">线下 AI 活动</span>全量盘点<br>黑客松 · 沙龙 Meetup · 大会论坛 · Workshop · 校园讲座 · 机器人/算力</h1>
-  <p class="sub">面向山东财经大学计算机专业同学（章丘校区）视角整理：只收录「线下 + 在济南 + AI 相关」的活动，每条标注片区（离章丘多远）、费用、学生能否报名与报名入口。每条活动均附可核验来源 URL，无来源不写；2023–2025 旧活动不冒充新活动。</p>
+  <div class="kicker">JINAN OFFLINE + ONLINE AI · 2026-10-26 → 2026-12</div>
+  <h1>AI 活动与学生福利盘点<br><span class="hl">济南线下</span> + 全国线上，每张卡片直说<span class="hl">福利、优缺点、值不值得去</span></h1>
+  <p class="sub">面向山东财经大学计算机专业同学（章丘校区）视角整理：线下只收录「线下 + 在济南 + AI 相关」，并按时间线排出本周可去/本周截止/11月/12月；线上板块覆盖赛事、直播大会、学生免费福利与训练营。每条附可核验来源 URL，福利查不到写"主办方未公布"，无来源不写。</p>
   <div class="meta">
     <span>盘点时点：2026-10-26（周一）</span>
-    <span>覆盖时段：2026年10月底–12月底</span>
-    <span>地点：济南全市（含章丘/长清）</span>
+    <span>覆盖：2026年10月底–12月 + 长期学生福利</span>
+    <span>片区：章丘/高新软件园/历下/历城/线上</span>
   </div>
   <div class="stats">
-    <div class="stat"><div class="n" id="stat-total">—</div><div class="t">未来活动总数（报名中/即将/已截止）</div></div>
-    <div class="stat"><div class="n" id="stat-free">—</div><div class="t">免费活动数</div></div>
-    <div class="stat"><div class="n" id="stat-student">—</div><div class="t">明确对学生开放</div></div>
-    <div class="stat"><div class="n" id="stat-ended">—</div><div class="t">刚结束但有复盘/后续价值</div></div>
+    <div class="stat"><div class="n" id="stat-off">—</div><div class="t">济南线下未来活动</div></div>
+    <div class="stat"><div class="n" id="stat-on">—</div><div class="t">线上资源（赛事/直播/福利/训练营）</div></div>
+    <div class="stat"><div class="n" id="stat-free">—</div><div class="t">其中明确免费</div></div>
+    <div class="stat"><div class="n" id="stat-stu">—</div><div class="t">学生可报/可领</div></div>
   </div>
 </div></div></header>
 
-<!-- ===== 活动清单 ===== -->
-<section id="events"><div class="wrap">
-  <div class="sec-head"><h2>一、未来活动清单（按时间排序）</h2><span class="en">UPCOMING</span><span class="count" id="ev-count"></span></div>
-  <p class="lead">覆盖活动平台（活动行/互动吧等）、开发者社区城市站（GDG/华为云/阿里云/WaytoAGI 等）、园区政府与本地企业（齐鲁软件园/高新区/浪潮/超算中心等）、各高校（山大/山财/齐鲁工大等）。可按片区筛选，或一键只看「免费」「学生可报」。</p>
+<div class="filterbar"><div class="wrap">
   <div class="toolbar">
-    <input id="search" type="text" placeholder="搜活动名/主办方/主题/场馆，例如：大模型、黑客松、齐鲁软件园、山财、机器人…">
+    <input id="search" type="text" placeholder="搜活动/主办方/福利关键词，如：算力、证书、茶歇、智能体、齐鲁软件园、Copilot…">
+    <select id="stSel"><option value="">全部状态</option><option value="本周截止">本周截止</option><option value="报名中">报名中</option><option value="即将开始">即将开始</option><option value="长期有效">长期有效</option><option value="已结束">已结束</option><option value="下届预告">下届预告</option></select>
   </div>
-  <div class="chips" id="area-chips"></div>
-  <div class="chips" id="quick-chips">
+  <div class="chips" id="areaChips"></div>
+  <div class="chips" id="quickChips">
     <span class="chip quick" data-q="free">只看免费</span>
-    <span class="chip quick" data-q="student">学生可报名</span>
+    <span class="chip quick" data-q="student">学生可报/可领</span>
   </div>
-  <div class="tbl-wrap">
-    <table>
-      <colgroup><col style="width:15%"><col style="width:16%"><col style="width:10%"><col style="width:20%"><col style="width:7%"><col style="width:8%"><col style="width:9%"><col style="width:7%"><col style="width:8%"></colgroup>
-      <thead><tr><th>活动 / 主办方</th><th>AI 主题</th><th>时间</th><th>地点（片区）</th><th>费用</th><th>学生</th><th>报名入口</th><th>来源</th><th>状态</th></tr></thead>
-      <tbody id="ev-tbody"></tbody>
-    </table>
+</div></div>
+
+<main><div class="wrap">
+
+  <!-- ===== 线下时间线 ===== -->
+  <div class="tl-wrap" id="tlOffline">
+    <div class="tl-axis"></div>
+    <div class="tl-head" id="week"><span class="dot"></span><h2>本周可去</h2><span class="en">10/27 – 11/01</span><span class="cnt" data-cnt="week"></span><div class="tip">盘点时点起一周内就能到场的线下活动，按日期排序。</div></div>
+    <div id="box-week"></div>
+    <div class="tl-head" id="deadline"><span class="dot"></span><h2>本周报名截止</h2><span class="en">DEADLINE 10/31</span><span class="cnt" data-cnt="deadline"></span><div class="tip">活动本身在线上/后续，但本周（10/31）报名通道关闭，先占名额。</div></div>
+    <div id="box-deadline"></div>
+    <div class="tl-head" id="nov"><span class="dot"></span><h2>11 月活动</h2><span class="en">NOVEMBER</span><span class="cnt" data-cnt="nov"></span></div>
+    <div id="box-nov"></div>
+    <div class="tl-head" id="dec"><span class="dot"></span><h2>12 月活动</h2><span class="en">DECEMBER</span><span class="cnt" data-cnt="dec"></span></div>
+    <div id="box-dec"></div>
+    <div class="tl-head" id="ended"><span class="dot"></span><h2>已结束 · 别白跑（有复盘/下届线索）</h2><span class="en">ENDED</span><span class="cnt" data-cnt="ended"></span></div>
+    <div id="box-ended"></div>
   </div>
-  <div class="cards" id="ev-cards"></div>
-</div></section>
 
-<!-- ===== 刚结束 ===== -->
-<section id="ended"><div class="wrap">
-  <div class="sec-head"><h2>二、刚结束 · 有复盘资料或系列后续价值</h2><span class="en">ENDED / REPLAY</span></div>
-  <p class="lead">以下活动在盘点时点（10/26）前刚结束，报名已截止、不要白跑；但有资料/回放可看，或主办方明确会在济南续办，可作为后续蹲守线索。</p>
-  <div class="tbl-wrap">
-    <table>
-      <colgroup><col style="width:15%"><col style="width:16%"><col style="width:10%"><col style="width:20%"><col style="width:7%"><col style="width:8%"><col style="width:9%"><col style="width:7%"><col style="width:8%"></colgroup>
-      <thead><tr><th>活动 / 主办方</th><th>AI 主题</th><th>时间</th><th>地点（片区）</th><th>费用</th><th>学生</th><th>复盘/入口</th><th>来源</th><th>状态</th></tr></thead>
-      <tbody id="ended-tbody"></tbody>
-    </table>
+  <!-- ===== 线上 ===== -->
+  <div class="tl-wrap online" id="tlOnline">
+    <div class="tl-axis"></div>
+    <div class="tl-head" id="olA"><span class="dot"></span><h2>线上 A · 近期 AI 赛事 / 黑客松</h2><span class="en">ONLINE CONTESTS</span><span class="cnt" data-cnt="olA"></span><div class="tip">2026年11–12月可报名或参赛，线上提交，免费优先。</div></div>
+    <div id="box-olA"></div>
+    <div class="tl-head" id="olB"><span class="dot"></span><h2>线上 B · 直播 / 大会</h2><span class="en">LIVE &amp; CONFERENCES</span><span class="cnt" data-cnt="olB"></span></div>
+    <div id="box-olB"></div>
+    <div class="tl-head" id="olC"><span class="dot"></span><h2>线上 C · 学生专属免费福利（长期有效）</h2><span class="en">STUDENT BENEFITS</span><span class="cnt" data-cnt="olC"></span><div class="tip">凭学生身份免费领取的开发工具/算力/课程/证书，逐项核实2026年当前政策。</div></div>
+    <div id="box-olC"></div>
+    <div class="tl-head" id="olD"><span class="dot"></span><h2>线上 D · 训练营 / 课程 + 下届预告</h2><span class="en">CAMPS &amp; NEXT YEAR</span><span class="cnt" data-cnt="olD"></span></div>
+    <div id="box-olD"></div>
   </div>
-  <div class="cards" id="ended-cards"></div>
-</div></section>
+  <div class="no-match" id="noMatch">没有符合筛选条件的活动，试试清空筛选或搜索其它关键词。</div>
 
-<!-- ===== 待复核 ===== -->
-<section id="pending"><div class="wrap">
-  <div class="sec-head"><h2>三、待复核 / 需进一步确认</h2><span class="en">TO RE-CHECK</span></div>
-  <div class="warn-box">以下线索<b>证据不足或页面受限</b>（仅有二手转发、日期/地点未明确、报名入口未公开），未计入活动清单，建议联系主办方或到官方渠道复核后再决定是否前往。</div>
-  <div id="pending-list"></div>
-</div></section>
+  <!-- ===== 待复核 ===== -->
+  <section id="pending" style="margin-top:34px">
+    <div class="sec-head"><h2>待复核 / 需进一步确认</h2><span class="en">TO RE-CHECK</span></div>
+    <div class="warn-box">以下线索证据不足或页面受限（二手转发、字段在图片中、动态渲染抓不到），卡片中已注明，建议联系主办方或到官方渠道复核后再行动。</div>
+    <div id="pendingList"></div>
+  </section>
 
-<!-- ===== 未发现 ===== -->
-<section id="notfound"><div class="wrap">
-  <div class="sec-head"><h2>四、已排查但未发现近期济南线下活动的渠道/主体</h2><span class="en">CHECKED · NONE</span></div>
-  <p class="lead">穷尽性排查的证据：以下渠道/主体均在 2026-10-26 经过定向检索（官网、活动平台、官方公众号/微博/抖音、高校通知），未发现 2026 年 11–12 月在济南线下举办的 AI 相关活动。部分仅有线上活动或外地城市站，已在备注说明。</p>
-  <div id="nf-list"></div>
-</div></section>
+  <!-- ===== 未发现 ===== -->
+  <section id="notfound" style="margin-top:30px">
+    <div class="sec-head"><h2>已排查但未发现近期济南线下活动的渠道/主体</h2><span class="en">CHECKED · NONE</span></div>
+    <p class="lead">2026-10-26 经定向检索（官网、活动平台、官方公众号/微博/抖音、高校通知），以下渠道未发现 11–12 月在济南线下举办的 AI 活动。部分仅有线上活动或外地城市站，已在备注说明。</p>
+    <div id="nfList"></div>
+  </section>
 
-<!-- ===== 方法 ===== -->
-<section id="method"><div class="wrap">
-  <div class="sec-head"><h2>五、方法与口径</h2><span class="en">METHOD</span></div>
-  <div class="list-card"><h3>纳入口径</h3><ul>
-    <li><b>同时满足三个条件：</b>线下举办（纯线上直播不计）、举办地点在济南（含章丘/长清各校区）、内容与 AI 直接相关（大模型/Agent/AIGC/具身智能/机器人/算力/自动驾驶/AI编程等）。</li>
-    <li><b>时间窗口：</b>以 2026-10-26 起至 12 月底为主；10/26 前刚结束的活动，仅在有公开复盘资料/回放，或主办方有明确济南续办计划时收入第二节，并标注「已结束」。</li>
-    <li><b>学生视角：</b>费用、报名门槛、是否对校外学生开放逐条核实；高校校内讲座若不对外开放会明确标注。</li>
-    <li><b>片区参考（从章丘校区出发）：</b>章丘本校最近；高新软件园/汉峪金谷/高新会展中心约 40–50 公里（地铁8号线+经十路）；历下区（山大中心校区/山师）约 45 公里；市中/槐荫更远；长清大学城约 60 公里。具体通勤以导航为准。</li>
-  </ul></div>
-  <div class="list-card"><h3>检索与核验过程</h3><ul>
-    <li>按「活动平台+开发者社区城市站」「本地园区/政府/企业+高校」「WaytoAGI+社媒+补漏」三个分片并行，逐渠道执行多轮关键词检索与列表页抓取。</li>
-    <li>每条活动以官方报名页、主办方公众号/官网、学校通知或权威媒体报道交叉核验；无法打开的页面在第三节如实标注，未据片段臆造。</li>
-    <li>线下活动常有临近 3–7 天才官宣/放票的情况，建议关注「待复核」清单与主办方官方号，每周刷新。</li>
-  </ul></div>
-</div></section>
+  <!-- ===== 方法 ===== -->
+  <section id="method" style="margin-top:30px">
+    <div class="sec-head"><h2>纳入口径与方法</h2><span class="en">METHOD</span></div>
+    <div class="list-card"><h3>线下纳入口径</h3><ul>
+      <li>同时满足：线下举办（纯线上直播不计入线下）、举办地点在济南（含章丘/长清各校区）、内容与 AI 直接相关。</li>
+      <li>时间窗口：2026-10-26 起至 12 月底；10/26 前刚结束、有公开复盘或主办方有济南续办计划的进"已结束"，明确置灰。</li>
+      <li>距离参考（从章丘校区出发）：章丘本校最近；高新软件园/汉峪金谷约 40–50 公里（地铁8号线+经十路）；历下校区约 45 公里；历城城东（融创文旅城方向）经十路直达；市中/槐荫更远。</li>
+    </ul></div>
+    <div class="list-card"><h3>福利与判断原则</h3><ul>
+      <li>「你能拿到什么」只写主办方已公开的福利；查不到的写"主办方未公布"，不编造奖金、额度、茶歇、内推。</li>
+      <li>优点/缺点站在大二学生视角：免费、时间冲突、距离、门槛、证书与简历价值、是否零基础可参加。</li>
+      <li>「值不值得去」为信息整理建议，不构成承诺；报名前请以官方页面实时信息为准。</li>
+    </ul></div>
+  </section>
+</div></main>
 
-<footer><div class="wrap">
-  <div>济南 AI 线下活动盘点 · 盘点时点 2026-10-26（周一） · 覆盖 2026 年 10 月底至 12 月底</div>
-  <div style="margin-top:8px">每条活动附来源 URL；无来源不写；活动时间、地点、报名状态以官方页面实时信息为准，出行前请再次确认。</div>
-</div></footer>
+<div class="foot"><div class="wrap">
+  AI活动与学生福利盘点 · 盘点时点 2026-10-26（周一） · 线下覆盖济南10月底–12月，线上含长期福利<br>
+  每条活动均附来源 URL；无来源不写。活动时间、地点、名额、福利以官方页面实时信息为准，出行前请再次确认。
+</div></div>
+
+<button id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
 
 <script>
-/* ============ 未来活动（按开始日期升序） ============ */
-const EV=[
-{name:"研究生系列学术沙龙（第十八期）：以人工智能催生新质生产力为例",host:"山东财经大学研究生处（学科建设办公室）、经济学院",topic:"以AI催生新质生产力为案例谈研究与写作（经管+AI交叉，14:30）",start:"2026-10-27",end:"2026-10-27",area:"章丘（圣井，待确认）",venue:"山东财经大学校内（教室见海报）",address:"校区待确认：研究生活动多在燕山校区（历下区二环东路7366号），经济学院本科在圣井校区（章丘区经十东路18602号）",fee:"免费",student:"是",entry:"校内海报通知",src:"https://www.sdufe.edu.cn/info/1071/31923.htm",status:"即将开始",note:"偏经管学术写作、AI为案例背景；主讲人余东华；地点在海报图片中，建议到校后看海报"},
-{name:"WorkBuddy 开发者沙龙·济南站——【智涌泉城】从泉城出发，WorkBuddy AI场景落地日",host:"腾讯云开发者社区",topic:"AI智能体办公落地：从大模型到智能体、FDE企业超级员工、企业AI落地优先级评估；含开放麦QA（13:30–17:30）",start:"2026-10-28",end:"2026-10-28",area:"高新软件园（历下）",venue:"齐鲁软件园大厦A座12楼·梦想大厅",address:"济南市历下区新泺大街1766号",fee:"免费",student:"是",entry:"https://cloud.tencent.com/developer/salon/salon-2531",src:"https://cloud.tencent.com/developer/salon/salon-2531",status:"报名中",note:"官方页面明确欢迎「计算机相关专业在校学生」；本周最值得去的线下技术沙龙；从章丘约40km"},
-{name:"明德经世大讲堂第15期——当AI成为金融代理：内容生产的动机挤出与投资决策的赋能溢出",host:"山东财经大学金融学院",topic:"AI作为金融代理对内容生产与投资决策的影响（金融+AI交叉讲座，09:30，主讲人高超越）",start:"2026-10-29",end:"2026-10-29",area:"章丘（圣井，待确认）",venue:"山东财经大学校内（教室见海报）",address:"金融学院在圣井校区（章丘区经十东路18602号），具体教室见校内海报",fee:"免费",student:"是",entry:"校内海报通知",src:"https://www.sdufe.edu.cn/info/1071/31983.htm",status:"即将开始",note:"偏经管/金融科技视角，非技术研发讲座；校外能否进场未说明"},
-{name:"CCF 分布式计算与系统专委第八届「算力网」研讨会（齐鲁算潮起，算网向未来）",host:"中国计算机学会（CCF）分布式计算与系统专委 × 山东大学",topic:"算力网前沿技术、算力互联互通、AI算力底座（面向分布式/算力方向研究与开发人员）",start:"2026-10-30",end:"2026-11-01",area:"待确认",venue:"济南市（山大承办，CCF门户未写明具体场馆）",address:"济南市（推测山大中心校区/软件学院，以官网日程为准）",fee:"待确认",student:"不明",entry:"https://conf.ccf.org.cn/conf/index.htm",src:"https://conf.ccf.org.cn/conf/index.htm?pageNo=72",status:"报名中",note:"门户（10/25更新）显示10/30–11/1报名中；但4月预告曾写10/16–18，以最新门户为准；联系人曾德泽15002774210，场馆/费用待核"},
-{name:"第九届山东省人工智能大会（SDAI 2026）",host:"山东省人工智能学会（承办：山东大学、山东省人工智能学院）",topic:"济南本地最高规格AI年度大会：主论坛+分论坛+专家报告，AI前沿学术与产业落地（10/30报到，10/31–11/1开会）",start:"2026-10-31",end:"2026-11-01",area:"历城（城东，近章丘）",venue:"济南融创施柏阁酒店一楼宴会厅AB厅",address:"济南市历城区（自贸区）凤鸣路5865-2号·融创文旅城",fee:"收费",student:"是（学生可注册，学生票待核）",entry:"https://member.sdaai.org.cn/meetingList",src:"https://www.sdaai.org.cn/newsinfo/11331902.html",status:"报名中",note:"10/24学会仍发「倒计时7天欢迎报名」；费用/学生票需登录注册系统或致电朱老师15689691766；在经十路城东方向，距章丘相对近"},
-{name:"第十届华为ICT大赛（2026–2027赛季）中国区报名",host:"华为技术有限公司",topic:"ICT实践赛/创新赛/编程赛，含AI、网络、云计算等方向（线上报名，山东赛区线下省赛）",start:"2026-10",end:"2026-10-31",area:"线上/山东",venue:"线上报名；山东赛区线下实践赛时间地点待公布（通常2027上半年）",address:"通过本校华为ICT学院/指导老师报名",fee:"免费",student:"是",entry:"https://e.huawei.com/cn/talent/ict-academy/",src:"https://e.huawei.com/cn/talent/ict-academy/#/ict-contest?compId=85131998",status:"即将截止",note:"中国区报名10/31截止，本周就要报；线下环节不在本窗口，但含金量高，先占名额"},
-{name:"「鲁信杯」第一届山东省「人工智能+产教应用」大赛",host:"山东省鲁信投资控股集团（指导：团省委/省委金融办/省工信厅；承办：省产教融合促进会）",topic:"四赛道：AI+教育/产业/金融/新媒体数字内容；配套免费AI训练营（商汤小浣熊Agent实战、Seko AI视频、大模型金融落地）、算力支持、成果转化",start:"2026-10",end:"2026-10-31",area:"线上/济南",venue:"线上报名（9/1–10/31校级初赛）；复赛11月；决赛12月在济南",address:"报名 aic.sdifs.com；决赛地点以组委会通知为准",fee:"免费",student:"是",entry:"https://aic.sdifs.com/",src:"https://aic.sdifs.com/",status:"报名中",note:"报名10/31截止；高校师生免费提供大模型算力，一等奖权益最高10万元、纳名企人才库；设学校组"},
-{name:"2026 山东省首届大学生 AI 大模型创新传播大赛",host:"山东青年政治学院、山东省互联网传媒集团、工行山东省分行（省教育厅/团省委/大众报业指导）",topic:"三赛道：AI视听内容创作、AI传播优化应用、AI传播工具创新",start:"2026-10",end:"2026-11-10",area:"线上/济南",venue:"线上提交作品（11/10截止）；线下省赛答辩时间地点待公布，校内评选11月下旬",address:"经本校团委/学院组队报名",fee:"免费",student:"是",entry:"http://finance.dzwww.com/zt/2026ai/",src:"https://www.sdyu.edu.cn/info/1004/34385.htm",status:"报名中",note:"山东省全体在校生可跨校组队（须经本校团委）；山财学生联系校团委/相关学院统一报名"},
-{name:"「我在济南刚刚好」AIGC短剧视频创作大赛",host:"海右人才（济南市委组织部人才办）、大众网",topic:"AIGC短剧赛道 + IP创意视频赛道（联动网易《燕云十六声》）；免费AI创作训练营、行业导师、最高10万奖金",start:"2026-10",end:"2026-11-15",area:"线上/济南",venue:"线上赛事（11/15前投稿初审；11/16–12/15全片制作；决赛/展演在济南）",address:"报名入口经「海右人才」「文旅济南」「青春济南」公众号获取",fee:"免费",student:"是",entry:"http://jinan.dzwww.com/qcxw/202609/t20260923_18146149.htm",src:"http://jinan.dzwww.com/qcxw/202609/t20260923_18146149.htm",status:"报名中",note:"赛期至2027年3月；高校师生可报；获奖可申报济南创意经济高层次人才认定"},
-{name:"WaytoAGI 济南站月度 AI 切磋大会（11月场·按规律预期）",host:"WaytoAGI 济南站（组织者胡杨；OPC代表重光）",topic:"AI实战切磋，每期主题不同（Codex共学/AI短片/智能体等）；免费、限名额、学生友好",start:"2026-11-29",end:"2026-11-29",area:"高新软件园（历下）",venue:"齐鲁软件园 / 山东（济南）人工智能岛（历史场地，具体以当期通知为准）",address:"济南市历下区新泺大街齐鲁软件园一带",fee:"免费",student:"是",entry:"https://events.waytoagi.com/",src:"http://m.toutiao.com/group/7680098861172261427/",status:"即将开始",note:"【日期待复核】济南日报2026/8/31报道该站「每月最后一周周日下午固定办一期」；10月场为10/24–25的1024专场，11月按规律为11/29，报名页尚未挂，关注WaytoAGI公众号/济南站微信群"},
-{name:"把握OPC发展红利·个人零基础转型AI创业 项目闭门深度交流【济南】",host:"AI创业联盟（活动行平台）",topic:"AI驱动一人公司（OPC）创业转型与项目对接（14:00，偏创业社交，非技术分享）",start:"2026-12-15",end:"2026-12-15",area:"待确认",venue:"山东济南（活动行列表未显示具体场馆）",address:"济南（具体地址见活动行该活动页）",fee:"待确认",student:"不明",entry:"https://www.huodongxing.com/events?city=济南&order=n&category=13",src:"https://www.huodongxing.com/events?city=济南&order=n&category=13",status:"报名中",note:"【地点/票价待复核】活动行列表显示12/15（周二）14:00；学生慎选，建议先确认是否收费与是否对学生开放"},
-{name:"第十八届蓝桥杯全国大学生软件和信息技术大赛（报名/校选阶段）",host:"蓝桥杯大赛组委会（山东各高校设考点）",topic:"软件赛/电子赛/AI算法等个人赛（程序设计、Python/C++等组别）",start:"2026-10",end:"2026-12-18",area:"线上/济南",venue:"线上报名（至12/18 14:00）；校选在各校校内；省赛线下机考，山东考点2027年春公布",address:"以山财教务处/计算机学院通知为准",fee:"收费（报名费）",student:"是",entry:"https://dasai.lanqiao.cn/",src:"https://dasai.lanqiao.cn/pages/v7/dasai/competition/individual_competition.html",status:"报名中",note:"本窗口为报名+校选阶段；线下省赛通常2027年4月"},
-{name:"WaytoAGI 济南站月度 AI 切磋大会（12月场·按规律预期）",host:"WaytoAGI 济南站（组织者胡杨）",topic:"AI实战切磋（月度固定场，主题当期公布）",start:"2026-12-27",end:"2026-12-27",area:"高新软件园（历下）",venue:"齐鲁软件园 / 人工智能岛（历史场地，待当期通知）",address:"济南市历下区新泺大街齐鲁软件园一带",fee:"免费",student:"是",entry:"https://events.waytoagi.com/",src:"http://m.toutiao.com/group/7680098861172261427/",status:"即将开始",note:"【日期待复核】按「每月最后一周周日」规律推算为12/27；11月场为11/29，均需临近时在WaytoAGI平台/公众号确认"}
+/* ===== 济南线下活动数据 ===== */
+const OFF=[
+{box:"week",num:"01",name:"研究生系列学术沙龙（第十八期）：以人工智能催生新质生产力为例",host:"山东财经大学研究生处（学科建设办公室）、经济学院",time:"10/27 周二 14:30",area:"章丘（圣井，待确认）",areaKey:"章丘",venue:"山财校内（教室见海报）",address:"校区待确认：研究生活动多在燕山校区（历下区二环东路7366号）；经济学院本科在圣井校区（章丘区经十东路18602号）",fee:"免费",feeKey:"free",student:"是（校内）",status:"即将开始",stKey:"soon",
+benefits:["校内公开学术讲座，免费、免报名","内容为AI+经管交叉的研究与写作方法，可作课程论文/选题参考","物质福利（茶歇/礼品）主办方未公布，讲座类通常无"],
+pros:["免费、无需校外报名","若在圣井校区（章丘）举办，从宿舍步行可达","经管视角的AI选题启发，主讲人余东华教授"],
+cons:["偏经管学术写作（以AI为案例），不是技术实战","校区与教室只在海报图片中，网页未公布","周二14:30可能与课程冲突","外校区/校外人员能否进场未说明"],
+verdict:"在圣井校区且当天没课就顺路去；想学硬核技术的优先 10/28 腾讯云场。",vtag:"顺路可去",entry:"校内海报通知（无公开报名页）",src:"https://www.sdufe.edu.cn/info/1071/31923.htm"},
+{box:"week",num:"02",name:"WorkBuddy 开发者沙龙·济南站——【智涌泉城】从泉城出发，WorkBuddy AI场景落地日",host:"腾讯云开发者社区（腾讯云官方）",time:"10/28 周三 13:30–17:30",area:"高新软件园（历下）",areaKey:"高新软件园",venue:"齐鲁软件园大厦A座12楼·梦想大厅",address:"济南市历下区新泺大街1766号（从章丘约40km，地铁8号线+经十路）",fee:"免费",feeKey:"free",student:"是（官方明确欢迎在校学生）",status:"报名中",stKey:"open",
+benefits:["免费参加，公开报名","议程明确安排「茶歇&合影」（15:20）","4场实战分享：智能体办公、FDE企业超级员工、WorkBuddy企业提效、企业AI落地选型方法论","17:00「AI场景开放麦」可现场提问/上台交流","可现场接触腾讯云客户成功专家、117AI FDE、Datawhale成员（社群/实习人脉）"],
+pros:["官方页面逐字写「欢迎计算机相关专业的在校学生」","免费、大厂背书，可写进简历/综测","讲智能体与AI办公落地，正切当下技术热点","腾讯云WorkBuddy济南系列高频巡回，可持续跟"],
+cons:["周三13:30–17:30，大概率占用下午课程","从章丘校区出发约40km，跨区通勤约1.5小时","需提前在腾讯云社区报名并通过审核","页面未写票价（惯例免费，以确认短信为准）"],
+verdict:"本周最值得去的线下技术活动：免费、学生友好、内容硬核。没课就报名并提前出发。",vtag:"强烈推荐",entry:"https://cloud.tencent.com/developer/salon/salon-2531",src:"https://cloud.tencent.com/developer/salon/salon-2531"},
+{box:"week",num:"03",name:"明德经世大讲堂第15期——当AI成为金融代理：内容生产的动机挤出与投资决策的赋能溢出",host:"山东财经大学金融学院（主讲人高超越）",time:"10/29 周四 09:30",area:"章丘（圣井，待确认）",areaKey:"章丘",venue:"山财校内（教室见海报）",address:"金融学院在圣井校区（章丘区经十东路18602号），具体教室见校内海报",fee:"免费",feeKey:"free",student:"是（校内）",status:"即将开始",stKey:"soon",
+benefits:["校内公开讲座，免费、免报名","金融+AI交叉话题（AI作为金融代理），了解学界前沿观点","物质福利主办方未公布（讲座类）"],
+pros:["免费、金融学院主办","若在圣井校区举办则离章丘最近","对金融科技/AI应用方向有选题启发"],
+cons:["周四09:30，与课程冲突概率高","偏经济学/金融学理论，非技术开发","教室只在海报中，网页未公布","校外能否进场未说明"],
+verdict:"金融科技方向且没课可去；纯技术向同学可跳过。",vtag:"顺路可去",entry:"校内海报通知（无公开报名页）",src:"https://www.sdufe.edu.cn/info/1071/31983.htm"},
+{box:"week",num:"04",name:"CCF 分布式计算与系统专委第八届「算力网」研讨会（齐鲁算潮起，算网向未来）",host:"中国计算机学会（CCF）分布式计算与系统专委 × 山东大学",time:"10/30–11/01",area:"待确认（济南）",areaKey:"待确认",venue:"济南市（山大承办，门户未写明场馆）",address:"推测山大校区，以官网日程为准（联系人曾德泽15002774210）",fee:"待确认（学术研讨会一般有注册费）",feeKey:"unk",student:"待确认",status:"报名中",stKey:"open",
+benefits:["与CCF分布式计算与系统专委专家学者面对面","议题覆盖算力网、算力互联互通、AI算力底座","学生注册政策/费用/场馆，门户尚未写明（待复核）"],
+pros:["CCF专委主办、山东大学承办，学术规格高","对分布式系统/算力/AI Infra方向考研科研有帮助","就在济南"],
+cons:["门户只写「济南市」，具体场馆未公布","日期存在矛盾：4月预告写10/16–18，现门户写10/30–11/1","通常有注册费，学生票不明","跨周五至周日，可能更面向注册会员/教师"],
+verdict:"科研/考研方向且有老师带可去；先等官网日程确认场馆与学生注册政策，普通本科生可观望。",vtag:"观望",entry:"https://conf.ccf.org.cn/conf/index.htm",src:"https://conf.ccf.org.cn/conf/index.htm?pageNo=72"},
+{box:"week",num:"05",name:"第九届山东省人工智能大会（SDAI 2026）",host:"山东省人工智能学会（承办：山东大学、山东省人工智能学院）",time:"10/30报到 9:00–20:00；10/31–11/1开会",area:"历城（城东，近章丘）",areaKey:"历城",venue:"济南融创施柏阁酒店一楼宴会厅AB厅",address:"济南市历城区凤鸣路5865-2号·融创文旅城（经十路城东方向，距章丘相对近）",fee:"收费（金额见注册系统，学生票待核）",feeKey:"paid",student:"是（学生可注册）",status:"报名中",stKey:"open",
+benefits:["山东省最高规格AI年度大会：主论坛+多场分论坛专家报告","一天半集中接触省内高校/企业AI资源，适合加导师/企业微信","官方协调协议酒店（自费预订）与参会群","资料/伴手礼等具体权益以注册系统为准"],
+pros:["省AI学会主办、山大承办，简历/综测素材","议题全栈覆盖学术与产业，适合开眼界","在历城经十路沿线，城东方向距章丘相对近","10/24官网仍发「倒计时7天欢迎报名」，仍可注册"],
+cons:["收费会议，注册费表在邀请函图片里、正文抓不到（早鸟票10/15后仍开放）","学生票是否减免未写明，需登录系统或电话朱老师15689691766","跨周五，食宿交通自理","学生个人自费性价比取决于学院是否有公费名额"],
+verdict:"AI方向值得参加，先问学院/导师有没有学生名额或公费；自费再按预算权衡。",vtag:"推荐",entry:"https://member.sdaai.org.cn/meetingList",src:"https://www.sdaai.org.cn/newsinfo/11331902.html"},
+{box:"deadline",num:"06",name:"第十届华为ICT大赛（2026–2027赛季）中国区报名",host:"华为技术有限公司",time:"报名截止10/31；山东线下省赛2027上半年",area:"线上报名 + 山东线下",areaKey:"线上",venue:"线上报名；通过本校ICT学院/指导老师",address:"山东赛区线下实践赛时间地点待公布（通常2027上半年）",fee:"免费",feeKey:"free",student:"是",status:"本周截止",stKey:"hot",
+benefits:["免费报名","官方免费备赛课程、实验手册与模拟环境","华为官方获奖证书（行业认可度高）","优秀选手进入华为ICT人才生态，利于实习/校招"],
+pros:["免费、国家级赛事、计算机专业高含金量","大二即可报名，先占名额熟悉赛制","练网络/云/AI/编程实战，反哺课内"],
+cons:["10/31截止，本周内必须行动","通常需经本校ICT学院/指导老师注册（先找山财计算机学院）","线下省赛在2027上半年，需要持续备赛","部分赛题有网络/通信方向门槛，可选AI/编程方向"],
+verdict:"免费且含金量高，先报名不亏；本周截止，立即找指导老师。",vtag:"强烈推荐",entry:"https://e.huawei.com/cn/talent/ict-academy/",src:"https://e.huawei.com/cn/talent/ict-academy/#/ict-contest?compId=85131998"},
+{box:"deadline",num:"07",name:"「鲁信杯」第一届山东省「人工智能+产教应用」大赛",host:"山东省鲁信投资控股集团（指导：团省委/省委金融办/省工信厅；承办：省产教融合促进会）",time:"报名+校级初赛至10/31；复赛11月；决赛12月",area:"线上报名 + 济南决赛",areaKey:"线上",venue:"线上报名（aic.sdifs.com）；决赛在济南",address:"决赛地点以组委会通知为准；支持单位含火山引擎/商汤/中国移动山东/天融信",fee:"免费",feeKey:"free",student:"是",status:"本周截止",stKey:"hot",
+benefits:["免费报名，官方提供大模型算力支持","免费AI训练营：商汤小浣熊Agent实战、Seko AI视频创作、大模型金融落地（两场连播）","分赛道等级奖项，一等奖权益最高10万元（据赛事报道）","成果转化对接会、纳入名企人才库"],
+pros:["免费、学生可报、四赛道可选（教育/产业/金融/新媒体数字内容）","训练营+算力+导师，零基础友好","鲁信集团（省属国企）主办，官方背景强","决赛在济南，本地参赛成本低"],
+cons:["报名与校级初赛10/31截止，时间紧","需学校注册（有校联络员流程），个人直接报名可能受限","决赛12月，需要组队与持续投入","部分赛道偏应用方案而非纯算法"],
+verdict:"免费+训练营+算力+10万奖金，强烈推荐；本周内通过学校联络员报名。",vtag:"强烈推荐",entry:"https://aic.sdifs.com/",src:"https://aic.sdifs.com/"},
+{box:"nov",num:"08",name:"2026 山东省首届大学生 AI 大模型创新传播大赛",host:"山东青年政治学院、山东省互联网传媒集团、工行山东省分行（省教育厅/团省委/大众报业指导）",time:"作品11/10前提交；省赛答辩11月下旬",area:"线上提交 + 线下省赛",areaKey:"线上",venue:"线上提交作品；线下省赛答辩地点待公布",address:"经本校团委/学院组队报名",fee:"免费",feeKey:"free",student:"是",status:"报名中",stKey:"open",
+benefits:["免费参赛","官方提供AI工具/算力支持（报名后进群领取）","获奖证书（省教育厅/团省委等指导）","优秀作品有省级媒体展映/传播资源","奖金/奖品以官方公示为准"],
+pros:["免费、门槛偏创意而非代码，适合AI应用/内容方向","允许跨校组队（须经本校团委）","AI视听/传播优化/工具创新三赛道，选题面广"],
+cons:["须经本校团委/学院统一报名，不能纯个人空降","11/10截止，制作周期约2周","线下省赛答辩地点未公布","非硬核编程赛事，对算法求职加成有限"],
+verdict:"想做AI应用/内容作品的推荐报，顺便攒作品；纯打算法竞赛可跳过。",vtag:"推荐",entry:"http://finance.dzwww.com/zt/2026ai/",src:"https://www.sdyu.edu.cn/info/1004/34385.htm"},
+{box:"nov",num:"09",name:"「我在济南刚刚好」AIGC短剧视频创作大赛",host:"海右人才（济南市委组织部人才办）、大众网",time:"11/15前投稿初审；11/16–12/15全片制作；赛至2027/3",area:"线上为主 + 济南决赛",areaKey:"线上",venue:"线上赛事；决赛/展演在济南",address:"报名入口经「海右人才」「文旅济南」「青春济南」公众号获取",fee:"免费",feeKey:"free",student:"是（高校师生）",status:"报名中",stKey:"open",
+benefits:["免费参赛","免费AI创作训练营与行业导师指导","奖金最高10万元（官方）","可联动网易《燕云十六声》IP素材","获奖可申报济南创意经济高层次人才认定"],
+pros:["免费、赛期长、AIGC工具零基础可上手","高校师生可报","本地人才政策加持，获奖有官方认定"],
+cons:["官方独立报名入口需经公众号获取，网页未直接放","决赛/展演在济南，后期需线下","偏视频创作，耗时不小","评审主观，作品导向"],
+verdict:"对AIGC视频/短剧有兴趣就报，免费且周期长，可当作品练手。",vtag:"推荐",entry:"http://jinan.dzwww.com/qcxw/202609/t20260923_18146149.htm",src:"http://jinan.dzwww.com/qcxw/202609/t20260923_18146149.htm"},
+{box:"nov",num:"10",name:"WaytoAGI 济南站月度 AI 切磋大会（11月场 · 按规律预期）",host:"WaytoAGI 济南站（组织者胡杨；OPC代表重光）",time:"11/29 周日下午（按规律预期，待挂页）",area:"高新软件园（历下）",areaKey:"高新软件园",venue:"齐鲁软件园 / 山东（济南）人工智能岛（历史场地）",address:"济南市历下区新泺大街齐鲁软件园一带",fee:"免费",feeKey:"free",student:"是（学生友好）",status:"即将开始（日期待复核）",stKey:"soon",
+benefits:["免费参加（历史场次均免费）","线下AI实战切磋：历史主题含Codex共学、智能体、AI短片","进济南站微信群，长期获取活动与OPC/AI创业资源","历史合作方有百度秒哒、海看股份，当期福利以报名页为准"],
+pros:["免费、学生友好、名额制小场","每月最后周日固定办，济南日报2026/8/31报道确认","AI同好密度高，适合长期混迹"],
+cons:["11/29为按规律推算，平台尚未挂报名页","历史限额50人，需抢票","具体场地当期才公布","若挂页晚可能与期末安排冲突"],
+verdict:"免费且对学生友好，推荐关注；11月中旬起每天刷WaytoAGI公众号/平台。",vtag:"推荐",entry:"https://events.waytoagi.com/",src:"http://m.toutiao.com/group/7680098861172261427/"},
+{box:"dec",num:"11",name:"把握OPC发展红利·个人零基础转型AI创业 项目闭门深度交流【济南】",host:"AI创业联盟（活动行平台）",time:"12/15 周二 14:00",area:"待确认",areaKey:"待确认",venue:"山东济南（活动行列表未显示具体场馆）",address:"具体地址见活动行该活动页",fee:"待确认（此类闭门会多为收费）",feeKey:"unk",student:"待确认",status:"报名中",stKey:"open",
+benefits:["闭门交流形式的AI创业/OPC（一人公司）人脉对接","具体福利（路演/资料/茶歇）活动行详情页未公布"],
+pros:["想了解AI一人公司/自由职业可接触创业者"],
+cons:["周二14:00与上课冲突","地址与票价均未在列表显示，此类闭门会多为收费","面向创业者/企业主，学生匹配度低","信息弱，无法确认是否对学生开放"],
+verdict:"信息不明+创业向+工作日，学生观望，不建议专程去。",vtag:"观望",entry:"https://www.huodongxing.com/events?city=济南&order=n&category=13",src:"https://www.huodongxing.com/events?city=济南&order=n&category=13"},
+{box:"dec",num:"12",name:"第十八届蓝桥杯全国大学生软件和信息技术大赛（报名/校选阶段）",host:"蓝桥杯大赛组委会（山东各高校设考点）",time:"报名至12/18 14:00；校选校内；省赛2027年春",area:"线上报名 + 线下机考",areaKey:"线上",venue:"线上报名；校选在山财校内；省赛山东考点待公布",address:"以山财教务处/计算机学院通知为准",fee:"收费（报名费）",feeKey:"paid",student:"是",status:"报名中",stKey:"open",
+benefits:["获奖证书（工信部人才交流中心体系赛事，认可度高）","省赛/国赛奖项利于综测、保研与求职背书","备赛直接提升算法编程能力"],
+pros:["计算机专业最普及的算法赛事之一，大二参赛正合适","以学校为单位报名，流程成熟","校内校选，参赛成本低"],
+cons:["收费（报名费，以官网为准）","省赛2027年春季线下机考，需系统刷题","获奖需要刷题投入，非零基础可拿","山财校选时间待教务处通知"],
+verdict:"计划走开发/求职/保研的推荐报，12/18前在官网报名并跟教务处。",vtag:"推荐",entry:"https://dasai.lanqiao.cn/",src:"https://dasai.lanqiao.cn/pages/v7/dasai/competition/individual_competition.html"},
+{box:"dec",num:"13",name:"WaytoAGI 济南站月度 AI 切磋大会（12月场 · 按规律预期）",host:"WaytoAGI 济南站（组织者胡杨）",time:"12/27 周日下午（按规律预期，待挂页）",area:"高新软件园（历下）",areaKey:"高新软件园",venue:"齐鲁软件园 / 人工智能岛（历史场地）",address:"济南市历下区新泺大街齐鲁软件园一带",fee:"免费",feeKey:"free",student:"是（学生友好）",status:"即将开始（日期待复核）",stKey:"soon",
+benefits:["免费参加（历史场次均免费）","线下AI实战切磋，月度固定","进济南站微信群，长期获取活动与OPC资源"],
+pros:["免费、学生友好、名额制小场","年末场可复盘一年AI工具实战"],
+cons:["12/27为按规律推算，平台尚未挂报名页","临近期末考试与元旦，时间可能不合适","历史限额50人，需抢票"],
+verdict:"时间合适就关注，临近期末可降低优先级。",vtag:"推荐",entry:"https://events.waytoagi.com/",src:"http://m.toutiao.com/group/7680098861172261427/"}
 ];
 
-/* ============ 刚结束（复盘/系列价值） ============ */
+/* ===== 已结束（置灰） ===== */
 const ENDED=[
-{name:"AI 切磋大会 · 济南 · 齐鲁软件园A座（1024 超能Coding周末 专场）",host:"WaytoAGI（全国44城1024切磋大会之一）",topic:"六大赛道黑客松/AI实战创作（含OPC赛道），50+城市联动、限50人",start:"2026-10-24",end:"2026-10-25",area:"高新软件园（历下）",venue:"齐鲁软件园A座",address:"济南市历下区新泺大街1766号",fee:"免费",student:"是",entry:"https://events.waytoagi.com/events/ai-切磋大会-济南-齐鲁软件园-a-座-e_f45d47c9ac",src:"https://events.waytoagi.com/events/ai-切磋大会-济南-齐鲁软件园-a-座-e_f45d47c9ac",status:"已结束",note:"复盘关键：济南站负责人胡杨，OPC代表重光（重光序列智能科技）；该站每月最后周日固定办一期，下场11/29见活动清单"},
-{name:"「华为杯」第八届中国研究生人工智能创新大赛 全国总决赛",host:"山东大学（中国学位与研究生教育学会等）",topic:"「AI赋能 智行致远」研究生AI创新作品竞技，305支队伍844名研究生",start:"2026-10-23",end:"2026-10-25",area:"历下",venue:"山东大学中心校区",address:"济南市历下区山大南路27号",fee:"免费（赛事邀请制）",student:"是",entry:"https://www.ygb.sdu.edu.cn/info/1011/20997.htm",src:"https://www.view.sdu.edu.cn/info/1003/214855.htm",status:"已结束",note:"潘云鹤院士、济南市市长出席闭幕；面向研究生，本科生可关注明年届次与校内选拔"},
-{name:"CANN训练营——山东大学专场（昇腾）",host:"昇腾社区（华为昇腾）",topic:"昇腾CANN异构计算与AI算力开发实训",start:"2026-10-22",end:"2026-10-22",area:"历下",venue:"山东大学",address:"济南市（山大校区）",fee:"免费",student:"是",entry:"https://www.hiascend.com/activities",src:"https://www.hiascend.com/activities",status:"已结束",note:"9/29还有「齐鲁昇腾算子开发者实训营」（济南）；昇腾在济南系列实训频繁，关注昇腾活动目录"},
-{name:"2026 人工智能产业大会（AIIC 2026）",host:"中国信通院、山东省工信厅、济南市人民政府（AIIA）",topic:"国家级AI产业大会首次走出北京落地济南：AI赋能新型工业化，300+企业（华为/浪潮/讯飞/英伟达/宇树/优必选），智能体、机器人、FDE对接",start:"2026-10-14",end:"2026-10-16",area:"起步区",venue:"济南黄河国际会展中心（N2馆等）",address:"济南新旧动能转换起步区 黄河国际会展中心",fee:"免费（公开报名）",student:"是",entry:"https://aihub.caict.ac.cn/aiia_activities",src:"http://www.shandong.gov.cn/art/2026/9/16/art_97560_755979.html",status:"已结束",note:"已有官方复盘（齐鲁软件园参展、华为昇腾950超节点亮相、宇树机器人展示）；明年是否续办济南值得蹲"},
-{name:"WorkBuddy 开发者沙龙·济南站首场「泉城开发者实战日」",host:"腾讯云开发者社区",topic:"AI技术在泉城开发者工作流中的实战落地",start:"2026-10-18",end:"2026-10-18",area:"高新软件园（历下）",venue:"齐鲁软件园（同系列场地）",address:"济南市",fee:"免费",student:"是",entry:"https://cloud.tencent.com/developer/activities",src:"https://cloud.tencent.com/developer/user/12816165",status:"已结束",note:"10/14上线报名、10/18即满；说明腾讯云WorkBuddy济南系列高频巡回，10/28为第二场（见活动清单）"},
-{name:"泉客松·济南首届全域AI黑客松大赛",host:"济南高新区管委会（第四届海右人才节）",topic:"2天1夜全域AI黑客松，30支团队、1000+游园观众",start:"2026-06-27",end:"2026-06-28",area:"高新软件园（历下）",venue:"齐鲁软件园",address:"济南高新区齐鲁软件园",fee:"免费",student:"是",entry:"https://innovation.jinan.gov.cn/col/col126706/art/2026/art_ca28fc973fa6b800ada7d03cb6c51900.html",src:"https://innovation.jinan.gov.cn/col/col126706/art/2026/art_ca28fc973fa6b800ada7d03cb6c51900.html",status:"已结束",note:"首届「泉客松」，高校团队可参加；若续办，预计在明年海右人才节（约6月）"},
-{name:"抖音 AI 创变者计划·山东站公益黑客松",host:"抖音（字节跳动）× 济南高新区",topic:"面向高校青年的2天1夜公益AI黑客松，省内外26所高校95名青年开发者",start:"2026-05-09",end:"2026-05-10",area:"高新软件园（历下）",venue:"山东（济南）人工智能岛",address:"济南高新区齐鲁软件园·人工智能岛",fee:"免费",student:"是",entry:"https://innovation.jinan.gov.cn/col/col16571/art/2026/art_aa295ef81cb2471098826470dc19fee6.html",src:"https://innovation.jinan.gov.cn/col/col16571/art/2026/art_aa295ef81cb2471098826470dc19fee6.html",status:"已结束",note:"山东首场面向高校青年的公益黑客松；后续是否再落济南关注抖音校园/高新区公告"}
+{num:"",name:"AI 切磋大会 · 济南 · 齐鲁软件园A座（1024 超能Coding周末 专场）",host:"WaytoAGI（全国44城1024切磋大会之一）",time:"10/24–10/25",area:"高新软件园（历下）",venue:"齐鲁软件园A座",address:"济南市历下区新泺大街1766号",fee:"免费",feeKey:"free",student:"是（限50人）",
+benefits:["免费，全国44城同主题，限50人小场","六大赛道黑客松实战（含OPC赛道）"],
+pros:["齐鲁软件园A座，WaytoAGI主办","济南站负责人胡杨、OPC代表重光现场"],
+cons:["10/24–25已结束，本月已无票","小场限额，错过只能等下月"],
+verdict:"已结束别跑；下场11/29月度切磋见编号10。",vtag:"已结束别跑",entry:"https://events.waytoagi.com/events/ai-切磋大会-济南-齐鲁软件园-a-座-e_f45d47c9ac",src:"https://events.waytoagi.com/events/ai-切磋大会-济南-齐鲁软件园-a-座-e_f45d47c9ac"},
+{num:"",name:"「华为杯」第八届中国研究生人工智能创新大赛 全国总决赛",host:"山东大学（中国学位与研究生教育学会等）",time:"10/23–10/25",area:"历下",venue:"山东大学中心校区",address:"济南市历下区山大南路27号",fee:"免费（赛事邀请制）",feeKey:"free",student:"限研究生",
+benefits:["国家级研究生赛事决赛，305支队伍844名研究生","潘云鹤院士、济南市市长出席闭幕"],
+pros:["规格高，可看赛题与获奖作品方向"],
+cons:["仅限研究生参赛队伍，本科生无法参加","10/23–25已结束"],
+verdict:"已结束；本科期间先打其他赛事，考研后再来。",vtag:"已结束别跑",entry:"https://www.ygb.sdu.edu.cn/info/1011/20997.htm",src:"https://www.view.sdu.edu.cn/info/1003/214855.htm"},
+{num:"",name:"CANN训练营——山东大学专场（昇腾）",host:"昇腾社区（华为昇腾）",time:"10/22",area:"历下",venue:"山东大学",address:"济南市（山大校区）",fee:"免费",feeKey:"free",student:"是",
+benefits:["免费昇腾CANN异构计算与AI算力开发实训","9/29还有「齐鲁昇腾算子开发者实训营」（济南）"],
+pros:["昇腾在济南系列实训频繁，免费且硬核"],
+cons:["10/22已结束","需关注昇腾活动目录抢后续场次"],
+verdict:"已结束；关注 hiascend.com/activities 济南后续训练营。",vtag:"已结束别跑",entry:"https://www.hiascend.com/activities",src:"https://www.hiascend.com/activities"},
+{num:"",name:"2026 人工智能产业大会（AIIC 2026）",host:"中国信通院、山东省工信厅、济南市人民政府（AIIA）",time:"10/14–10/16",area:"起步区",venue:"济南黄河国际会展中心",address:"济南新旧动能转换起步区（距市区较远）",fee:"免费（公开报名）",feeKey:"free",student:"是",
+benefits:["国家级AI产业大会首次走出北京落地济南，免费报名","300+企业（华为/浪潮/讯飞/英伟达/宇树/优必选），智能体/机器人/FDE对接"],
+pros:["官方复盘已出（昇腾950超节点、宇树机器人亮相）","明年若续办济南是最值得蹲的展会"],
+cons:["10/14–16已结束","黄河会展中心在起步区，距章丘/市区均远"],
+verdict:"已结束；先看官方复盘，蹲明年是否续办。",vtag:"已结束别跑",entry:"https://aihub.caict.ac.cn/aiia_activities",src:"http://www.shandong.gov.cn/art/2026/9/16/art_97560_755979.html"},
+{num:"",name:"WorkBuddy 开发者沙龙·济南站首场「泉城开发者实战日」",host:"腾讯云开发者社区",time:"10/18",area:"高新软件园（历下）",venue:"齐鲁软件园（同系列场地）",address:"济南市",fee:"免费",feeKey:"free",student:"是",
+benefits:["免费，泉城开发者实战日"],
+pros:["证明腾讯云WorkBuddy济南系列高频巡回"],
+cons:["10/14上线报名、10/18即满，首场已结束"],
+verdict:"已结束；10/28第二场见编号02。",vtag:"已结束别跑",entry:"https://cloud.tencent.com/developer/activities",src:"https://cloud.tencent.com/developer/user/12816165"},
+{num:"",name:"泉客松·济南首届全域AI黑客松大赛",host:"济南高新区管委会（第四届海右人才节）",time:"6/27–6/28",area:"高新软件园（历下）",venue:"齐鲁软件园",address:"济南高新区齐鲁软件园",fee:"免费",feeKey:"free",student:"是",
+benefits:["2天1夜免费黑客松，30支团队、1000+游园观众","高校团队可参加"],
+pros:["本地官方黑客松，首届「泉客松」品牌"],
+cons:["6/27–28已结束"],
+verdict:"已结束；若续办预计在明年6月海右人才节。",vtag:"已结束别跑",entry:"https://innovation.jinan.gov.cn/col/col126706/art/2026/art_ca28fc973fa6b800ada7d03cb6c51900.html",src:"https://innovation.jinan.gov.cn/col/col126706/art/2026/art_ca28fc973fa6b800ada7d03cb6c51900.html"},
+{num:"",name:"抖音 AI 创变者计划·山东站公益黑客松",host:"抖音（字节跳动）× 济南高新区",time:"5/9–5/10",area:"高新软件园（历下）",venue:"山东（济南）人工智能岛",address:"济南高新区齐鲁软件园·人工智能岛",fee:"免费",feeKey:"free",student:"是",
+benefits:["免费公益黑客松，省内外26所高校95名青年开发者"],
+pros:["山东首场面向高校青年的公益黑客松"],
+cons:["5/9–10已结束"],
+verdict:"已结束；关注抖音校园与高新区公告。",vtag:"已结束别跑",entry:"https://innovation.jinan.gov.cn/col/col16571/art/2026/art_aa295ef81cb2471098826470dc19fee6.html",src:"https://innovation.jinan.gov.cn/col/col16571/art/2026/art_aa295ef81cb2471098826470dc19fee6.html"}
 ];
 
-/* ============ 待复核 ============ */
+/* ===== 线上A：近期赛事/黑客松（已剔除与线下重复的2条指引、已截止的蚂蚁灵波） ===== */
+const ONA=[
+{name:"2026 MinerU 数据智能与前沿语料挑战赛（MDIC2026）",host:"上海人工智能实验室、上海库帕思科技（上海市数据局/经信委/徐汇区指导）",time:"报名/进行中（2026年启动，WAIC 2026现场发布成果）",fee:"免费",student:"不限",status:"进行中",
+benefits:["总奖励200万元（100万现金+100万算力）","国家级项目基金扶持机会","模速空间孵化入驻","MinerU在线API额度"],
+pros:["AGI4S前沿方向，奖金力度极大","本科生可参与数据处理类赛道"],
+cons:["赛题偏文档解析/科学数据，门槛中高","决赛可能落地上海","报名截止日需以mineru.net/MDIC2026为准"],
+verdict:"200万总奖励的顶级数据赛，含金量高，能拉到队友就上。",vtag:"强烈推荐",entry:"https://mineru.net/MDIC2026",src:"https://www.shlab.org.cn/event/detail/101",note:"总价值200万元（100万现金+100万算力）经上海AI实验室官网确认。"},
+{name:"2026华为开发者大赛·智能体创新赛（西南/中部/西北/南部四赛区）",host:"华为云计算技术有限公司",time:"报名至2026-11-16",fee:"免费",student:"是",status:"报名中",
+benefits:["奖金池50万元（四赛区共享）","基于华为云CodeArts编程智能体开发","获奖证书/华为云资源支持"],
+pros:["计算机大二可组队（2–5人）","智能体方向正是当前求职热点","华为云生态背书，简历加分"],
+cons:["需华为云账号","分赛区线下决赛可能在外地","单赛道奖金分配未在列表页展开（待复核）"],
+verdict:"11/16截止的智能体赛，50万奖金池，学生可组队，值得报。",vtag:"推荐",entry:"https://developer.huaweicloud.com/competition/list",src:"https://developer.huaweicloud.com/competition/list",note:"四赛区共用同一赛题与奖金池，截止日均2026-11-16。"},
+{name:"2026华为开发者大赛·小红书Skill创新赛",host:"华为技术有限公司、小红书科技有限公司",time:"报名至2026-11-16（已2万+人参加）",fee:"免费",student:"是",status:"报名中",
+benefits:["奖金池50万元","小红书真实用户反馈闭环","作品在小红书传播曝光"],
+pros:["基于生活场景做Skill，不要求重型算法","适合有产品思维/短视频sense的学生","华为+小红书双背书"],
+cons:["需提交可复用Skill并接受用户反馈","竞争人数已超2万，内卷"],
+verdict:"50万奖金、学生可报，偏产品向而非算法向。",vtag:"推荐",entry:"https://developer.huaweicloud.com/competition/list",src:"https://developer.huaweicloud.com/competition/list",note:"列表页显示参赛人数21869。"},
+{name:"2026华为云具身智能大赛（学生专场）",host:"华为云",time:"2026年进行中（截止时间待复核）",fee:"免费",student:"是",status:"报名中",
+benefits:["学生专属赛道","华为云资源支持","具体奖金主办方未公布"],
+pros:["面向学生、具身智能热门方向","单人或2–3人小团队即可"],
+cons:["必须先完成华为云账号学生认证","奖金与截止时间待复核"],
+verdict:"学生专属具身智能赛，先过华为云学生认证再报名。",vtag:"推荐",entry:"https://developer.huaweicloud.com/competition/information/1300000267",src:"https://developer.huaweicloud.com/competition/information/1300000267",note:"详情页明确赛事对象为学生，需学生认证。"},
+{name:"2026中国高校计算机大赛·人工智能创意赛",host:"华为云（中国高校计算机大赛体系）",time:"报名截止2026-11-15",fee:"免费",student:"是",status:"报名中",
+benefits:["高校计算机大赛体系奖项（认可度高）","获奖证书","具体奖金主办方未公布"],
+pros:["面向高校学生的学科竞赛体系","简历/保研加分项"],
+cons:["11/15截止，时间紧","具体赛道与赛题需在华为云活动页查看"],
+verdict:"高校体系赛事，11/15截止，学科竞赛认可度高。",vtag:"推荐",entry:"https://developer.huawei.com/home/events",src:"https://developer.huawei.com/home/events",note:"赛事周期2026-06-05至2026-11-15；奖金与赛道待复核。"},
+{name:"华为算法挑战赛第38期·内存受限的大模型推理优化",host:"华为云开发者大赛平台",time:"报名/提交进行中（单人赛）",fee:"免费",student:"是",status:"报名中",
+benefits:["每期赛题奖金10万元","单人即可参赛，无需组队","华为云平台编译运行环境"],
+pros:["大模型推理优化是硬核方向","大二可独立做","奖金10万/期"],
+cons:["需要C++/模型压缩/推理优化功底","门槛偏高，非入门赛"],
+verdict:"硬核大模型推理优化赛，10万奖金，适合有C++基础的冲。",vtag:"推荐",entry:"https://developer.huaweicloud.com/competition/information/1300000270",src:"https://developer.huaweicloud.com/competition/information/1300000270",note:"详情页注明单人参赛；截止时间以详情页为准。"},
+{name:"第三届开放原子大赛·文心开源创新系列赛（文心多模态开发赛 & AI+硬件开发挑战赛）",host:"开放原子开源基金会、百度（文心大模型）",time:"赛事实施2026年8–11月，12月颁奖",fee:"免费",student:"是",status:"进行中",
+benefits:["基于文心大模型4.5开发","AtomGit私有仓库","开源贡献曝光","具体奖金主办方未公布"],
+pros:["国产大模型实战（文心4.5）","开源证书对简历有用","高校师生可报"],
+cons:["需邮件申请建仓（ERNIE-Hackathon@baidu.com），流程稍繁","奖金未公布"],
+verdict:"文心4.5开源实战，12月颁奖，适合做国产大模型应用的。",vtag:"推荐",entry:"https://competition.openatom.tech/competitionInfo?id=918fb5d95b21b81153f49f26b0c7e253",src:"https://competition.openatom.tech/competitionInfo?id=918fb5d95b21b81153f49f26b0c7e253",note:"开放原子官网显示实施期8–11月、12月颁奖。"},
+{name:"首届雅安人机气象预报挑战赛（YHMFC 2026）",host:"和鲸社区（Heywhale）",time:"2026年进行中（截止时间待复核）",fee:"免费",student:"不限",status:"进行中",
+benefits:["总奖金池50万元","气象AI方向独特"],
+pros:["奖金池50万","AI+气象交叉，门槛中等"],
+cons:["需气象/时序预测基础","具体截止时间待复核"],
+verdict:"50万奖金池的冷门气象AI赛，奖金可观。",vtag:"推荐",entry:"https://www.heywhale.com/home/competition?flag=gaiic",src:"https://www.heywhale.com/home/competition?flag=gaiic",note:"和鲸列表页显示总奖金池¥500,000，赛程需进详情页。"},
+{name:"腾讯SSV S-Makers 创客（AI Agent/APP/小程序）",host:"腾讯SSV（可持续社会价值事业部）",time:"2026年滚动进行中",fee:"免费",student:"是",status:"长期有效",
+benefits:["参赛即得Credits","最高奖项10万元","腾讯云/游戏学堂/教育/互娱生态资源"],
+pros:["社会议题+AI Agent，适合学生创意","10万最高奖+Credits"],
+cons:["需围绕真实社会议题","评审周期较长，下一批次时间待复核"],
+verdict:"腾讯SSV长期招募，AI Agent方向，10万最高奖。",vtag:"推荐",entry:"https://ssv.tencent.com/case/activity/s-makers/fellow",src:"https://ssv.tencent.com/case/activity/s-makers/fellow",note:"页面显示最高奖项¥100,000。"},
+{name:"2026 SMP 第十四届全国社会媒体处理大会·大模型图网络决策挑战赛",host:"中国中文信息学会、中国传媒大学（天池平台承办）",time:"2026-09-11 至 2026-11-16",fee:"免费",student:"是",status:"报名中",
+benefits:["学术会议配套赛事，获奖获SMP大会认可","具体奖金主办方未公布"],
+pros:["学术向，适合考研/学术简历","中文社会媒体处理方向"],
+cons:["图网络+大模型交叉，门槛较高","奖金未公布"],
+verdict:"学术向图网络挑战赛，11/16截止，适合走科研路线的。",vtag:"观望",entry:"https://tianchi.aliyun.com/competition/activeList",src:"https://tianchi.aliyun.com/competition/activeList",note:"天池列表显示Race Time 2026.09.11~2026.11.16。"},
+{name:"和鲸·智能网联汽车方向算法赛",host:"和鲸科技（Heywhale）",time:"决赛2026-11-01 至 12-01（初赛已结束）",fee:"免费",student:"是",status:"进行中",
+benefits:["和鲸平台证书","具体奖金主办方未公布"],
+pros:["智能网联汽车方向，工科学生对口","决赛11–12月"],
+cons:["初赛已结束（7–10月），当前仅决赛队可参加","新生无法报名，只能围观"],
+verdict:"初赛已过，新生无法加入；等下一届或关注和鲸其他赛。",vtag:"观望",entry:"https://www.heywhale.com/home/competition/66a01e47981b6a298d91b9d4/content/3",src:"https://www.heywhale.com/home/competition/66a01e47981b6a298d91b9d4/content/3",note:"初赛7.25–10月、决赛11.01–12.01。"}
+];
+
+/* ===== 线上B：直播/大会 ===== */
+const ONB=[
+{name:"2026 腾讯全球数字生态大会（免费线上直播）",host:"腾讯云",time:"2026-10-29（预约直播中）",fee:"免费（线上直播）",student:"不限",status:"即将开始",
+benefits:["免费线上直播","WorkBuddy/企业智能体/Agent年度发布","回放待公布"],
+pros:["腾讯年度最大发布，免费看","Agent/WorkBuddy一手信息，与10/28济南沙龙同主题"],
+cons:["线上直播需提前预约","议程偏企业向"],
+verdict:"10/29免费直播，腾讯年度AI发布，蹲直播。",vtag:"强烈推荐",entry:"https://developer.cloud.tencent.com.cn/",src:"https://developer.cloud.tencent.com.cn/",note:"腾讯云开发者社区首页显示「定档10月29日，点击预约直播」。"},
+{name:"百度世界2026（线上直播通道待官宣）",host:"百度",time:"2026-11-12（北京国家会议中心二期）",fee:"线下售票中（线上直播待确认）",student:"不限",status:"报名中",
+benefits:["主论坛+12场分论坛","企业级AI产品/文心发布","历史上均有免费直播（百度APP/官网）"],
+pros:["百度年度旗舰大会","主题「下一幕，智能组织」"],
+cons:["线下票已开卖，线上免费直播通道尚未官宣","北京线下，学生去成本高"],
+verdict:"等官方免费直播通道，线下票不必买。",vtag:"推荐",entry:"https://baiduworld2026.events.net.cn/tickets",src:"http://www.cnr.cn/bj/sijh/20261012/t20261012_527839614.shtml",note:"央广网10/12官宣11/12举办；直播入口待官方公布。"},
+{name:"火山引擎 FORCE 原动力大会·冬季场（预期12月）",host:"火山引擎（字节跳动）",time:"预期2026年12月（2025冬季场为12/18–19），2026日期未官宣",fee:"免费直播/回放（线下全通票另售）",student:"不限",status:"即将开始",
+benefits:["豆包大模型/HiAgent/TRAE发布","免费线上直播与回放","火山方舟开发者论坛"],
+pros:["豆包生态一手发布","历年均有免费直播/回放"],
+cons:["2026冬季场日期未官宣","需等官网预约开启"],
+verdict:"预期12月的豆包年度发布，免费直播，蹲官网预约。",vtag:"推荐",entry:"https://www.volcengine.com/event/force",src:"https://www.volcengine.com/event/force-2512",note:"force-2512页面仍显示2025冬季日程，但有「一键预约冬季场」按钮；2026日期待官宣。"},
+{name:"第九届山东省人工智能大会（SDAI 2026）·线上通道核实结果",host:"山东省人工智能学会",time:"10/30报到 / 10/31–11/01会议",fee:"线下收费（无线上通道）",student:"不明",status:"已截止",
+benefits:["线下注册含会务资料","已核实：邀请函与倒计时通知均未提及任何线上直播/线上票"],
+pros:["山东本地AI旗舰会议，但只能线下参加"],
+cons:["无线上票/直播，无法远程白嫖","会务组要求10/23前注册，线下收费"],
+verdict:"没有线上通道，线上党不用等；想去的看线下编号05。",vtag:"观望",entry:"https://member.sdaai.org.cn/meetingList",src:"https://www.sdaai.org.cn/newsinfo/11331902.html",note:"2026-10-26核实：邀请函、倒计时通知均无线上通道；若后续开通B站/视频号直播需关注学会官网。"},
+{name:"阿里云开发者社区·云栖回放（长期免费）",host:"阿里云",time:"长期有效（2026云栖大会9/22已举办，回放开放）",fee:"免费",student:"不限",status:"长期有效",
+benefits:["云栖主论坛/技术分论坛免费回放","MaaS & Agent / Agentic Cloud 等专题","课件资料"],
+pros:["随时看，不抢时间","Agent/大模型工程化一手内容"],
+cons:["不是实时直播，无互动"],
+verdict:"云栖回放免费长期开放，Agent方向值得补。",vtag:"推荐",entry:"https://yunqi.aliyun.com/2026/live",src:"https://yunqi.aliyun.com/2026/live",note:"2026云栖回放页开放。"},
+{name:"火山引擎 Live 回放（HiAgent / AIGC / AI教育等论坛）",host:"火山引擎",time:"长期有效（2026春季FORCE 6/23–24回放开放）",fee:"免费",student:"不限",status:"长期有效",
+benefits:["HiAgent论坛/AIGC应用论坛回放","大模型工程化实践"],
+pros:["免费、随时看","HiAgent是火山Agent核心产品"],
+cons:["非实时，无连麦互动"],
+verdict:"春季FORCE回放免费，HiAgent/AIGC方向可补课。",vtag:"推荐",entry:"https://www.volcengine.com/live/event/force-2606-session-HiAgent",src:"https://www.volcengine.com/live/event/force-2606-session-HiAgent",note:"回放页开放。"}
+];
+
+/* ===== 线上C：学生专属免费福利（17项，2026-10-26逐项核实） ===== */
+const ONC=[
+{name:"GitHub Student Developer Pack",host:"GitHub（Microsoft）",time:"长期有效（在校期间）",fee:"免费",student:"是",status:"长期有效",
+benefits:["学生期间免费 GitHub Pro","GitHub Copilot Student：无限代码补全+AI Credits+限额聊天/Agent（自动选模）","GitHub Codespaces 学生额度","捆绑第三方权益：JetBrains All Products Pack、DigitalOcean、Namecheap域名等（以官网offer列表为准）"],
+pros:["学编程、用Copilot、Git协作的刚需底座，一次认证解锁几十个学生包","国内高校邮箱/学信网可认证"],
+cons:["需在校学生身份验证（学校邮箱或学信网/证件）","第三方offer随时间变动","Copilot Student为限额版，非无限Pro"],
+verdict:"学生党第一必领，一证解锁全家桶。",vtag:"强烈推荐",entry:"https://education.github.com/pack",src:"https://education.github.com/pack",note:"第三方offer明细（Cursor/DO等）需登录Pack页查看。"},
+{name:"JetBrains 教育授权（Student Pack）",host:"JetBrains",time:"长期有效（按年续订）",fee:"免费",student:"是",status:"长期有效",
+benefits:["免费使用全部JetBrains IDE（IDEA Ultimate、PyCharm Pro等All Products Pack）","免费编程课程（JetBrains Academy/HyperSkill）"],
+pros:["Java/算法课主力IDE，正版旗舰级免费","毕业两年内还有毕业生折扣"],
+cons:["需大学邮箱/ISIC卡/GitHub Student Pack任一，全日制一年制以上课程","每年需手动续订"],
+verdict:"计算机学生标配，比破解版省心。",vtag:"强烈推荐",entry:"https://www.jetbrains.com/community/education/",src:"https://www.jetbrains.com/zh-cn/community/education/",note:"2026-10-26核实。"},
+{name:"Microsoft Azure for Students",host:"Microsoft Azure",time:"12个月额度，可按年续订",fee:"免费",student:"是",status:"长期有效",
+benefits:["$100 Azure额度（12个月内用于多数Azure产品）","无需信用卡","20+热门服务每月免费额度12个月"],
+pros:["免信用卡拿真金白银云额度，可玩虚拟机/AI服务","国内学生邮箱可认证"],
+cons:["仅限全日制大学生","$100额度对重度GPU训练不够，部分区域/服务受限"],
+verdict:"免信用卡的$100，白嫖云算力首选之一。",vtag:"强烈推荐",entry:"https://azure.microsoft.com/zh-cn/free/students/",src:"https://azure.microsoft.com/zh-cn/free/students/",note:"2026-10-26核实。"},
+{name:"AWS Educate / AWS Builder Center 学生计划",host:"Amazon Web Services",time:"长期有效",fee:"免费",student:"是",status:"长期有效",
+benefits:["免费云/GenAI课程与动手实验","学生验证后1年免费Skill Builder全库（900+课）","Student Rewards：AWS Credits+12个月高级课程+一门AWS认证基础考试券（2026-08上线）"],
+pros:["13岁+邮箱即可注册，门槛极低","送认证考试券，考证省钱"],
+cons:["云额度需逐步解锁，非一次性发","AWS控制台对新手略陡"],
+verdict:"学AWS体系+白拿考试券，适合考AWS证的同学。",vtag:"推荐",entry:"https://aws.amazon.com/cn/education/awseducate/",src:"https://builder.aws.com/learn/students",note:"官网写「超$50投入/人」，精确credit金额待复核。"},
+{name:"Google Cloud 学生计划",host:"Google Cloud",time:"长期有效",fee:"免费",student:"是",status:"长期有效",
+benefits:["200 Google Skills免费实验积分（签发后1年有效）","课程用教育云额度（由院系/老师发放，约$50/课程）","认证考试折扣"],
+pros:["学GCP徽章、做Labs免费"],
+cons:["自助$100云额度主要走老师/课程发放，个人很难直接领","需科学上网访问"],
+verdict:"拿徽章可以，云额度要蹭课程。",vtag:"推荐",entry:"https://cloud.google.com/edu/students",src:"https://cloud.google.com/edu/students",note:"第三方博客称自助$100/年，官网未确认自助入口，待复核。"},
+{name:"阿里云飞天加速计划·学生机",host:"阿里云",time:"活动至2027-03-31",fee:"部分收费（99元/年学生机）",student:"是",status:"报名中",
+benefits:["学生机ECS：1核2G、40G SSD、1M带宽，99元/年（续费同价）","新手指南称可免费领12个月学生ECS（实名认证+学信网认证后）","海量免费课程与实验"],
+pros:["国内访问快，搭博客/跑后端/练Linux首选","学信网认证即可"],
+cons:["免费时长与99元机两种口径并存，以活动页为准（待复核）","配置低（1M带宽），不能跑AI训练"],
+verdict:"国内学生机性价比高，搭服务器首选。",vtag:"强烈推荐",entry:"https://developer.aliyun.com/developer/student",src:"https://help.aliyun.com/zh/document_detail/2881975.html",note:"免费12个月与99元/年两种口径待在活动页确认。"},
+{name:"腾讯云校园计划（学生机/TokenHub）",host:"腾讯云",time:"长期有效（TokenHub活动至2026-12-31）",fee:"部分收费（学生机10元/月起）",student:"是",status:"长期有效",
+benefits:["学生机1核2G、1M带宽、50G云盘，10元/月、120元/年（未满25岁免认证即可买）","TokenHub新用户最高送100万tokens（DeepSeek/GLM/Kimi等，有效期90天）","Cloud Studio每月约10000分钟GPU免费时长（第三方整理，待复核）"],
+pros:["免认证门槛低，TokenHub白嫖大模型API额度","与10/28济南沙龙同生态"],
+cons:["学生机本身不免费（10元/月）","TokenHub活动12/31截止"],
+verdict:"国内云+模型API额度组合实用。",vtag:"推荐",entry:"https://cloud.tencent.com/act/campus",src:"https://www.tencentcloud.com/act/pro/tokenhub",note:"Cloud Studio GPU分钟数为第三方整理，待复核。"},
+{name:"华为云高校扶持计划（沃土/HCSD学生开发者）",host:"华为云",time:"长期有效",fee:"免费",student:"是",status:"长期有效",
+benefits:["高校AI/鲲鹏/昇腾人才培养资源代金券","HCSD校园大使组织、布道师活动","昇腾CANN训练营高校专场（如10/22山大场）"],
+pros:["贴近山东本地（山大已有专场），想玩昇腾算力的重点关注","认证学生身份加入开发者社区"],
+cons:["没有面向个人的自助免费学生机，资源多走院系/活动名额","代金券需通过校园计划申请"],
+verdict:"走校园大使/训练营路线拿昇腾资源。",vtag:"推荐",entry:"https://developer.huaweicloud.com/college/index.html",src:"https://developer.huaweicloud.com/plan/campus.html",note:"2026-10-26核实。"},
+{name:"百度飞桨 AI Studio（免费GPU算力）",host:"百度智能云",time:"长期有效",fee:"免费",student:"是",status:"长期有效",
+benefits:["每日登录送算力点，可白嫖V100 16GB GPU（免费用户约每天数小时，第三方实测约8小时/天）","免费数据集、教程、项目托管","千帆大模型平台每个模型约100万tokens体验额度"],
+pros:["学生练深度学习/跑小模型最现实的免费GPU，无需信用卡","PaddlePaddle生态教程全"],
+cons:["免费额度当天有效、每日重置","无root，主要支持Paddle系","精确每日GPU时长以控制台为准"],
+verdict:"国内免费GPU第一站，练模型必用。",vtag:"强烈推荐",entry:"https://aistudio.baidu.com/",src:"https://aistudio.baidu.com/",note:"每日GPU小时数第三方口径8h/天，官方数值待登录复核。"},
+{name:"Cursor 学生政策",host:"Anysphere（Cursor）",time:"2026-06-25起调整",fee:"免费（基础版）",student:"是",status:"长期有效",
+benefits:["免费版可直接使用","原免费Pro学生包2026-06-25起停止新申请","新政策：秋季起在校园/线上活动发Promotion折扣码"],
+pros:["免费版日常够用"],
+cons:["原免费Pro学生包已关闭新申请","历史上要求美国.edu邮箱，国内高校邮箱不适用","已开折扣的老用户保留到期"],
+verdict:"国内学生已领不到免费Pro，观望校园活动码。",vtag:"观望",entry:"https://cursor.com/help/account-and-billing/student-discount",src:"https://cursor.com/help/account-and-billing/student-discount",note:"2026-10-26核实。"},
+{name:"智谱开放平台（BigModel）",host:"智谱AI",time:"长期有效",fee:"免费（赠金）",student:"是",status:"长期有效",
+benefits:["新用户注册送2000万tokens体验包","GLM系列模型API，兼容OpenAI SDK"],
+pros:["国产大模型API额度大方，做毕设/小项目不花钱","注册即用，无需学生认证"],
+cons:["体验包有有效期（以控制台为准）","超额需充值"],
+verdict:"国产API白嫖额度最厚之一。",vtag:"强烈推荐",entry:"https://bigmodel.cn/console/",src:"https://bigmodel.cn/console/",note:"2000万tokens为官网控制台文案。"},
+{name:"硅基流动 SiliconFlow",host:"硅基流动",time:"长期有效",fee:"免费（赠金）",student:"是",status:"长期有效",
+benefits:["新用户送16元/1美元赠金，可体验全部模型","多款开源模型（DeepSeek-R1、Qwen、GLM、MiniMax等）免费且限并发","一个Key调用全栈开源模型"],
+pros:["一个平台白嫖多家开源模型API，做对比实验方便","小模型永久免费"],
+cons:["赠金额度不大，重度用需充值","免费模型限并发"],
+verdict:"开源模型API聚合站，实验利器。",vtag:"强烈推荐",entry:"https://cloud.siliconflow.cn/",src:"https://www.siliconflow.cn/zh/pricing",note:"2026-10-26核实。"},
+{name:"DeepSeek 开放平台",host:"深度求索",time:"长期有效",fee:"收费（无免费额度）",student:"是",status:"长期有效",
+benefits:["API价格极低（flash档缓存命中$0.003/百万输入token级）","兼容OpenAI SDK"],
+pros:["价格白菜，充值10元能用很久"],
+cons:["无注册赠送额度，必须实名充值（最低10元）才能调API"],
+verdict:"没免费额度但极便宜，可当备用模型。",vtag:"推荐",entry:"https://platform.deepseek.com/",src:"https://api-docs.deepseek.com/quick_start/pricing",note:"2026-10-26核实。"},
+{name:"扣子 Coze（个人免费版）",host:"字节跳动",time:"长期有效",fee:"免费",student:"是",status:"长期有效",
+benefits:["个人免费版免费用Bot/工作流搭建","每日登录送活动积分","免费额度内累计约500次免费调用（官方文档口径）"],
+pros:["零代码搭AI Bot，练Agent开发最快","国内网络直连"],
+cons:["免费版额度小，高级功能2026年起转付费","积分用完需买套餐"],
+verdict:"零代码Agent入门，免费版够用。",vtag:"推荐",entry:"https://www.coze.cn/",src:"https://docs.coze.cn/guides/edition",note:"每日积分额度以免费版页面为准，待复核。"},
+{name:"NVIDIA DLI 免费课程/开发者计划",host:"NVIDIA",time:"长期有效",fee:"免费",student:"是",status:"长期有效",
+benefits:["加入NVIDIA开发者计划免费领一门DLI自学课程","开源课程（Open Source Courses）免费下载学习","部分自学课程完成后发DLI证书"],
+pros:["CUDA/GPU编程体系课免费，还有官方证书","国产GPU替代热潮下学CUDA有价值"],
+cons:["开源课程无证书","带证书课程数量有限，部分实验环境需付费"],
+verdict:"学CUDA+拿NVIDIA证书的免费通道。",vtag:"推荐",entry:"https://developer.nvidia.cn/join-nvidia-developer-program",src:"https://www.nvidia.com/en-us/training/open-source/",note:"2026-10-26核实。"},
+{name:"Datawhale 组队学习",host:"Datawhale开源组织",time:"长期有效（按月开新期）",fee:"免费",student:"是",status:"长期有效",
+benefits:["免费组队学机器学习/深度学习/编程/数学，助教带练","完成打卡发学习证书/优秀学习者证书","系列学习可申AI+X微认证"],
+pros:["国内AI学习社区标杆，适合大二系统补基础","完全免费、有证书可写简历"],
+cons:["需按周期报名、按时打卡","证书为社区认证，非行业硬通货"],
+verdict:"免费+有证书+有同伴，自学破局神器。",vtag:"强烈推荐",entry:"https://www.datawhale.cn/",src:"https://docs.feishu.cn/v/wiki/F0OzwRPlCiAPnXkx5Bkc3LkAnOd/a1",note:"2026-10-26核实。"},
+{name:"Microsoft Office 365 教育版（A1/A3）",host:"Microsoft",time:"长期有效",fee:"免费",student:"是",status:"长期有效",
+benefits:["学校邮箱注册免费Office网页版/Teams/OneDrive 1TB","部分学校可领桌面版Office（A3）"],
+pros:["学生邮箱即可白嫖Office+OneDrive"],
+cons:["需学校在微软教育版目录内（山财是否支持待验证）","桌面版权限看学校采购"],
+verdict:"学校邮箱白拿Office，稳。",vtag:"推荐",entry:"https://www.microsoft.com/zh-cn/education/products/office",src:"https://www.microsoft.com/zh-cn/education/products/office",note:"山财是否在目录内需用学校邮箱试注册。"}
+];
+
+/* ===== 线上D：训练营/课程（8） ===== */
+const OND=[
+{name:"Datawhale 组队学习/开源教程（diy-llm、all-in-rag、hello-agents、base-llm、llm-algo-leetcode等）",host:"Datawhale社区",time:"10月组队学习期招募中（助教第85期）；GitHub教程长期自走",fee:"免费",student:"是",status:"进行中",
+benefits:["系统大模型/RAG/Agent/算法开源教程","微信群+GitHub协作","完成任务有鲸币/周边等社区激励","可积累开源项目经历"],
+pros:["免费、门槛友好、社群氛围好","大模型全栈内容（预训练/MoE/分布式/SFT/RLHF）对口AI方向","可写进简历的开源实践"],
+cons:["不发官方结业证书（社区自走教程）","需自律打卡，有进度压力","部分项目需GPU"],
+verdict:"免费系统学大模型的首选之一，重在实践而非拿证。",vtag:"强烈推荐",entry:"https://contributor.datawhale.cn/projects",src:"https://contributor.datawhale.cn/projects",note:"10/26显示多个项目「招募中」；11月新期主题看公众号。"},
+{name:"华为云 0元领人工智能入门级开发者认证（集齐5个AI微认证兑换）",host:"华为云开发者学堂",time:"2026-09-15 至 10-31（即将截止）",fee:"免费",student:"是",status:"报名中",
+benefits:["华为云官方「人工智能入门级开发者认证」证书（原价约700元，0元兑换）","300元云资源券","每日千万Token领取"],
+pros:["官方云厂商认证，简历可写","微认证免费学练考，线上完成","AI方向对口"],
+cons:["需集齐5个微认证才能兑换证书，时间投入不小","10/31截止，时间紧"],
+verdict:"想白嫖一张华为云AI官方证书的抓紧，10月底截止。",vtag:"推荐",entry:"https://edu.huaweicloud.com/",src:"https://edu.huaweicloud.com/news",note:"学堂首页与news页均在推（9.15–10.31）。"},
+{name:"华为云码道（CodeArts）鸿蒙应用开发实战微认证",host:"华为云开发者学堂",time:"2026-10-20 至 11-15",fee:"免费",student:"是",status:"报名中",
+benefits:["华为云官方认证证书","通过后成长中心积分，最高5万积分可兑云资源券"],
+pros:["线上一站式学练考，无需本地环境","免费拿官方证书"],
+cons:["偏鸿蒙/ArkTS应用开发，非大模型/AI算法方向","与算法主线关联较弱"],
+verdict:"对鸿蒙生态感兴趣可冲，纯AI方向优先级一般。",vtag:"观望",entry:"https://edu.huaweicloud.com/signup/b000f852819f43d0af15b58b95260bdd",src:"https://edu.huaweicloud.com/news",note:"活动期10/20–11/15。"},
+{name:"华为云开发者AI训练营（全年）",host:"华为云开发者",time:"2026-01-01 至 12-31",fee:"免费",student:"是",status:"长期有效",
+benefits:["AI方向实战课程","云资源/认证权益","线上&线下结合"],
+pros:["全年滚动，随时可加入","免费"],
+cons:["具体单期主题以活动页为准","与昇腾生态绑定"],
+verdict:"长期兜底选项，有空可参加单期。",vtag:"推荐",entry:"https://developer.huawei.com/home/events",src:"https://developer.huawei.com/home/events",note:"活动列表页显示全年训练营。"},
+{name:"阿里云天池 AI训练营（Python/大数据入门通识/AI课程证书计划）",host:"阿里云天池",time:"长期开放，随到随学",fee:"免费",student:"是",status:"长期有效",
+benefits:["天池结业证书（完成任务+学习赛可下载）","DSW免费在线编程算力","钉钉群答疑"],
+pros:["零基础友好，Python/大数据入门","免费证书+免费算力","学赛一体，可衔接天池竞赛"],
+cons:["内容偏入门，深度有限","证书为天池社区认证，行业含金量中等"],
+verdict:"零基础入门AI/数据的免费练手场，适合大二打底。",vtag:"推荐",entry:"https://tianchi.aliyun.com/specials/promotion/aicamps",src:"https://tianchi.aliyun.com/specials/promotion/AICourses",note:"Python/大数据训练营均写明免费可领证书。"},
+{name:"阿里云 大模型ACA认证星推官训练营",host:"阿里云培训中心",time:"2026-09-03 至 11-03（即将结束）",fee:"免费",student:"是",status:"进行中",
+benefits:["提示工程/RAG/Agent应用/微调/多模态学习路径","大模型ACA认证相关学习"],
+pros:["内容对口当前大模型方向","免费"],
+cons:["11/03结束，时间有限","「星推官」带推广性质，是否发证待复核"],
+verdict:"想系统过大模型应用链路的可在11月初前完成。",vtag:"推荐",entry:"https://edu.aliyun.com/trainingcamp/",src:"https://edu.aliyun.com/trainingcamp/",note:"训练营列表显示开营9/03–11/03。"},
+{name:"百度 AI Studio / 飞桨深度学习学院 免费课程与算力",host:"百度飞桨 PaddlePaddle / AI Studio",time:"长期开放",fee:"免费课程（深度学习工程师认证考试800元）",student:"是",status:"长期有效",
+benefits:["免费GPU算力","飞桨精品课程/AI快车道系列","开源项目与比赛"],
+pros:["免费GPU算力对学生很实用","课程体系完整","可参加飞桨黑客松/护航计划（通常12月/3月开报名）"],
+cons:["官方深度学习工程师认证考试收费800元","偏飞桨框架生态"],
+verdict:"白嫖免费GPU算力+系统学CV/NLP，长期值得用。",vtag:"推荐",entry:"https://aistudio.baidu.com/",src:"https://www.paddlepaddle.org.cn/",note:"免费课程与算力长期有效；付费认证800元按需。"},
+{name:"和鲸 Heywhale 大模型基础训练营",host:"和鲸社区 Heywhale",time:"长期/滚动开营",fee:"免费",student:"是",status:"长期有效",
+benefits:["完成通关可获证书","鲸币兑换高阶算力","在线云环境即开即用"],
+pros:["零基础友好，云环境免配置","证书+算力激励","4关任务制，门槛低"],
+cons:["内容偏入门","单期营有时间窗口"],
+verdict:"零基础快速过一遍大模型应用，轻松无压力。",vtag:"推荐",entry:"https://www.heywhale.com/",src:"https://www.heywhale.com/home/activity/detail/682314f7e45d609ed7f1ba38/content/1",note:"任务制免费营，常态化基础营滚动开放。"}
+];
+
+/* ===== 下届预告（6） ===== */
+const NEXT=[
+{name:"开源之夏 OSPP（中科院软件所「点亮计划」）",host:"中国科学院软件研究所",time:"通常3月报名、暑假(6–8月)开展；2027届以官方为准",fee:"免费",student:"是",status:"下届预告",
+benefits:["一对一开源导师","完成项目有项目奖金+权威证书（以2027届为准）","深入顶级开源社区"],
+pros:["含金量高的开源实践经历，保研/简历加分","有奖金"],
+cons:["需主动联系导师、写申请书，竞争激烈","周期长（暑假全职投入）"],
+verdict:"大二暑假冲刺开源大厂经历的高价值项，2027年3月蹲报名。",vtag:"强烈推荐",entry:"https://summer.ospp.ac.cn/",src:"https://m.summer.ospp.ac.cn/",note:"历史节奏约3月报名、暑期开发。"},
+{name:"Hacktoberfest（开源之秋）",host:"DigitalOcean等（全球开源社区）",time:"每年10月整月；2027届以官方为准",fee:"免费",student:"是",status:"下届预告",
+benefits:["完成4个PR获官方限定T恤/贴纸（以2027届为准）","开源社区贡献经历"],
+pros:["零门槛练Git/GitHub，攒开源经历","全球社区"],
+cons:["需找对good first issue并被合并","全英文issue为主"],
+verdict:"入门开源的最佳年度起点，2027年10月再来。",vtag:"推荐",entry:"https://hacktoberfest.com/",src:"https://hacktoberfest.com/",note:"2026届10月已近尾声。"},
+{name:"字节跳动技术训练营（青训营）",host:"字节跳动",time:"每年多期滚动（通常上半年/暑期招生）；2027届以官方为准",fee:"免费",student:"是",status:"下届预告",
+benefits:["字节资深工程师课程与任务","优秀者有实习/校招绿色通道（以2027届为准）"],
+pros:["免费大厂技术训练营，对口后端/算法","简历有分量"],
+cons:["有作业/考核，强度不低","方向以后端/前端/算法为主"],
+verdict:"想进大厂的高性价比免费训练，关注校招官网开营。",vtag:"推荐",entry:"https://jobs.bytedance.com/campus/",src:"https://jobs.bytedance.com/campus/m/page-6272Gc",note:"2027期次与时间以校招官网为准。"},
+{name:"腾讯犀牛鸟精英人才计划",host:"腾讯（高校合作）",time:"通常每年1月开放申请；2027届以官方为准",fee:"免费",student:"是",status:"下届预告",
+benefits:["校企双导师联合培养","产业真实科研课题、可发论文（以2027届为准）"],
+pros:["科研导向，适合保研/深造","腾讯品牌背书"],
+cons:["偏科研/竞赛背景，选拔门槛较高","周期长"],
+verdict:"有志科研/保研的可冲，2027年1月盯申请。",vtag:"推荐",entry:"https://ur.tencent.com/en/talent/program",src:"https://ur.tencent.com/en/talent/program",note:"2026届约1/8启动。"},
+{name:"腾讯犀牛鸟开源人才培养计划",host:"腾讯高校合作/腾讯云开源社区",time:"通常6–7月报名、暑假开展；2027届以官方为准",fee:"免费",student:"是",status:"下届预告",
+benefits:["腾讯系开源社区导师","开源实战+证书/周边（以2027届为准）"],
+pros:["在校大学生可报，门槛比精英计划低","开源经历+腾讯生态"],
+cons:["暑期时间投入","以腾讯开源项目方向为主"],
+verdict:"想练开源但够不上OSPP的友好替代，暑期参加。",vtag:"推荐",entry:"https://ur.tencent.com/",src:"https://ur.tencent.com/article/1507",note:"2025届时间6/20–9/10。"},
+{name:"Google Summer of Code（GSoC）",host:"Google",time:"通常每年3月报名、夏季编程；2027届以官方为准",fee:"免费",student:"是",status:"下届预告",
+benefits:["全球开源社区远程实习","官方stipend津贴+证书（以2027届为准）"],
+pros:["国际开源经历，出国/深造加分","有津贴"],
+cons:["全英文沟通，需较强基础","选拔激烈，需提前联系开源社区"],
+verdict:"有一定基础后可冲的国际开源项，2027年3月准备提案。",vtag:"观望",entry:"https://summerofcode.withgoogle.com/",src:"https://summerofcode.withgoogle.com/",note:"大二学生需先攒开源基础。"}
+];
+
+/* ===== 待复核（线下12项 + 线上补充） ===== */
 const PEND=[
-["SDAI 2026 注册费金额与学生票","费用表是邀请函里的图片，正文无数字；需登录 member.sdaai.org.cn 注册系统或致电朱老师 15689691766","https://member.sdaai.org.cn/meetingList"],
-["CCF 算力网研讨会具体场馆与注册费","CCF门户只写「济南市」；4月预告日期（10/16–18）与现门户（10/30–11/1）不一致；联系人曾德泽 15002774210","https://conf.ccf.org.cn/"],
-["山财两场讲座在哪个校区/教室","时间地点均在校内海报图片里；金融学院在圣井校区（章丘），研究生沙龙可能在燕山校区（历下），以校内海报为准","https://www.sdufe.edu.cn/"],
-["WaytoAGI 济南站 11/29、12/27 场次","按「每月最后周日」规律推算，平台尚未挂报名页；关注WaytoAGI公众号或济南站微信群（组织者胡杨）","https://events.waytoagi.com/"],
-["活动行 12/15 OPC闭门会地址与票价","活动行详情页时间/地址字段为模板变量未渲染；在活动行搜同名活动确认，学生谨慎报名","https://www.huodongxing.com/events?city=济南"],
-["腾讯云 10/28 沙龙是否完全免费","页面未写票价，按腾讯云开发者沙龙惯例免费；报名页提交后以确认通知为准","https://cloud.tencent.com/developer/salon/salon-2531"],
-["济南 Codex/WorkBuddy 商业实战沙龙（舜泰广场）","抖音多账号宣传「每周两场、已办30+场」，属企业老板向获客型沙龙，无公开报名页、费用与学生开放度不明","https://www.iesdouyin.com/share/video/7699707736276384122"],
-["SDAIC 现场总决赛 10/26–27","学会通用赛程写10/26–27现场总决赛，但仅入围队伍在承办单位实验室参赛、不开放观众，本年度报名早已截止","https://www.sdaai.org.cn/sdaic"],
-["「我在济南刚刚好」AIGC大赛官方报名入口","报道未给独立URL，需经「海右人才」「文旅济南」「青春济南」公众号进入","http://jinan.dzwww.com/qcxw/202609/t20260923_18146149.htm"],
-["AI大模型传播大赛省赛答辩地点/时间","线上提交11/10截止，线下省赛答辩安排待组委会公布","http://finance.dzwww.com/zt/2026ai/"],
-["蓝桥杯山财校选、华为ICT山东赛区线下赛","官网均未公布具体考点与时间；关注山财教务处/计算机学院、华为ICT学院通知","https://dasai.lanqiao.cn/"],
-["GDG 济南章节是否存在","gdg.community.dev 章节搜索页为JS地图渲染，未取到济南章节信息，需浏览器登录复核","https://gdg.community.dev/"]
+"【线下·SDAI 2026】注册费金额与学生票是否减免：注册费表在邀请函图片里，正文抓不到；可登录 member.sdaai.org.cn 或电话会务朱老师15689691766。",
+"【线下·CCF算力网研讨会】日期矛盾（4月预告写10/16–18，现门户写10/30–11/1）、具体场馆未公布、注册费与学生政策不明；联系人曾德泽15002774210；已核实无线上通道。",
+"【线下·山财两场讲座】校区与教室均只在海报图片中（10/27学术沙龙、10/29明德经世大讲堂），是否在圣井（章丘）校区需校内确认。",
+"【线下·WaytoAGI】11/29、12/27月度切磋为按「每月最后周日」规律推算，events.waytoagi.com 尚未挂独立报名页，需盯公众号/平台。",
+"【线下·活动行】12/15 OPC「AI创业闭门交流」地址与票价未在列表显示（详情页时间/地址字段是动态模板，未渲染）。",
+"【线下·腾讯云10/28】官方页未写票价，按系列惯例免费，以审核通过短信为准。",
+"【线下·舜泰广场】抖音同城出现的「Codex/WorkBuddy实战沙龙」（30+场、商业获客型），费用与学生开放度不明，疑似付费培训引流，谨慎对待。",
+"【线下·SDAIC】视觉应用等赛道「10/26–27现场总决赛」系旧模板误读：现场答辩仅入围队伍、不开放观众。",
+"【线下·AIGC短剧赛】「我在济南刚刚好」官方独立报名入口需经「海右人才」公众号获取，网页未直接放。",
+"【线下·传播大赛】山东省AI大模型创新传播大赛线下省赛答辩地点待公布。",
+"【线下·赛事考点】蓝桥杯山财校选时间、第十届华为ICT大赛山东线下省赛时间地点待公布。",
+"【线下·GDG】Google开发者济南（GDG Jinan）章节页为JS地图渲染，未读到可见活动，章节是否活跃待确认。",
+"【线上·华为开发者大赛】智能体赛/Skill赛单赛道奖金分配、具身智能学生赛奖金与截止、高校AI创意赛赛题与奖金，列表页未展开。",
+"【线上·其他赛事】雅安YHMFC截止时间、腾讯SSV下一批次时间、SMP图网络赛与文心系列赛奖金，以各自详情页为准。",
+"【线上·直播】百度世界2026（11/12）免费直播入口待官宣；火山引擎FORCE冬季场2026日期（预期12月）未官宣。",
+"【线上·阿里云学生机】「免费领12个月」与「99元/年」两种口径并存，需在活动页确认哪个现行。",
+"【线上·腾讯云】Cloud Studio 每月GPU免费分钟数为第三方整理（约10000分钟），官方页未确认。",
+"【线上·AI Studio】每日免费V100 GPU精确时长以登录控制台为准（第三方实测约8小时/天）。",
+"【线上·GitHub Pack】第三方offer明细（Cursor/DigitalOcean/Namecheap等具体额度）需登录Pack页查看，随时间变动。",
+"【线上·云额度】Google Cloud自助$100额度入口官网未确认（主要走老师发放）；AWS Student Rewards精确credit金额未公布（官方写「超$50/人」）。",
+"【线上·扣子】个人免费版每日积分/调用次数细则以免费版页面为准。",
+"【线上·Office365】山东财经大学是否在微软教育版目录内，需用学校邮箱实际试注册。",
+"【线上·认证】华为云0元AI认证10/31截止，能否在截止前集齐5个微认证需自测；阿里云ACA星推官营是否发放官方证书待确认。",
+"【线上·下届】字节青训营2027期次、Datawhale 11月新期主题，关注各自公众号/校招官网。"
 ];
 
-/* ============ 已排查未发现（分组） ============ */
+/* ===== 已排查未发现（8组） ===== */
 const NF=[
-{g:"活动平台",items:["互动吧（济南站，多为招商/研修班旧内容）","百格活动（仅3月OpenClaw济南站旧活动）","会鸽","活动树","Meetup.com（境外站检索未命中）","Eventbrite（境外站检索未命中）","活动行（除12/15 OPC闭门会外，窗口内AI条目多为5月/8月旧活动）"],note:"济南站列表页已实际抓取"},
-{g:"开发者社区城市站",items:["GDG 济南（页面渲染失败）","华为云 HCDG 济南（1024鸿蒙专场已结束）","阿里云开发者社区济南同城（无济南场）","火山引擎 ADG 济南（最近为7/18 Agent沙龙，已结束）","腾讯云（除WorkBuddy沙龙外）","百度智能云","InfoQ/极客邦（QCon/AICon/GMTC 无济南场）","稀土掘金","思否 SegmentFault","CSDN 线下城市沙龙","智谱","Kimi","MiniMax","Dify","LangGPT","Linux 中国","开源中国"],note:"均未发现11–12月济南线下AI场次"},
-{g:"园区/政府/机构",items:["齐鲁软件园 OPC赋能中心常态技术沙龙（无公开排期）","汉峪金谷/海右人才公园（称常态化沙龙但无排期）","国家超级计算济南中心（无公众开放日）","济南人工智能计算中心","济南市大数据局","济南市工信局","济南市科技局","山东省科协（无AI专项年会）","山东（济南）人工智能岛（5月后无新公告）","济南OPC社区（CBD城大厦，无公开活动页）","新旧动能转换先行区"],note:"建议关注「齐鲁软件园发展中心」等公众号"},
-{g:"本地 AI / 科技企业",items:["浪潮集团/浪潮云洲（Inspur World 本窗口不在济南）","山大地纬","神思电子","华天软件","金现代","中创软件","国网智能科技（鲁能智能）","兰剑智能","海看股份（动态停在7月）"],note:"B端企业活动多不公开索引"},
-{g:"高校（除已收录的山财讲座外）",items:["山大软件学院「智能·软件·未来」论坛（最新第39期9/29）","山大人工智能学院「人工智能大讲堂」（最新6月）","齐鲁工业大学/山东省人工智能研究院（最近为6月论坛）","山东师范大学","济南大学","山东建筑大学","山东交通学院"],note:"校内讲座多为小范围/海报通知，11–12月无公开预告"},
-{g:"在济赛事（本窗口无剩余线下环节）",items:["山东省大学生AI大赛 SDAIC 各赛道（AIGC/视觉/区块链等决赛10月已办完）","山东省人形机器人足球赛（4月已办）","ROBOCON/机甲大师（赛季在上半年）","中国(济南)新动能创新创业大赛（企业家路演，无学生开放环节）"],note:"省赛多集中在5–10月"},
-{g:"社媒与人才计划",items:["小红书（站内无收录）","知乎（无济南AI活动话题）","微博（无11–12月活动话题）","B站（仅历史回顾）","济南人社局「创业泉城训练营」（近期场次均在外地）"],note:"抖音同城仅见商业获客型沙龙（已入待复核）"},
-{g:"外地/线上大会（确认不在济南）",items:["第三届中国具身智能与人形机器人创新峰会（12/22–23 苏州）","NLPCC 2026（11/3–5）","ChinaSoft 2026（11/5–8 天津）","ChinaVR 2026（11/6–8 广州）","CCF 珠峰大会（11/7–9 武汉）"],note:"同期开发者大会均不在济南，列出供比较"}
+{g:"活动平台",items:["互动吧","百格活动","会鸽","活动树","Meetup","Eventbrite","活动行（除12/15 OPC闭门会外无济南AI活动）"]},
+{g:"开发者社区城市站",items:["GDG济南（章节页动态渲染无可读活动）","华为云HCDG济南（仅1024专场已落地）","阿里云开发者社区济南同城","火山引擎ADG济南","InfoQ/极客邦QCon/AICon城市站","掘金/思否/CSDN线下城市沙龙","智谱/Kimi/MiniMax/Dify/LangGPT/Linux中国/开源中国济南站"]},
+{g:"本地园区/政府/机构",items:["齐鲁软件园OPC常态活动（无公开排期）","汉峪金谷","国家超算济南中心（无本窗口开放日）","济南人工智能计算中心/算力中心","济南市大数据局/工信局/科技局","山东省科协（无AI专项年会）","新旧动能转换先行区","山东（济南）人工智能岛（5月后无新公告）","OPC社区（CBD城大厦无公开活动页）"]},
+{g:"本地AI企业",items:["浪潮/浪潮云洲（Inspur World本窗口不在济南）","山大地纬","神思电子","华天软件","金现代","中创软件","国网智能（鲁能电力机器人）","兰剑/蓝海领航","海看股份（官网无11–12月活动）"]},
+{g:"高校",items:["山大软件学院论坛/AI大讲堂（无11–12月预告）","齐鲁工业大学（山东省人工智能研究院）","山东师范大学","济南大学","山东建筑大学","山东交通学院","山大/齐鲁工大等其他校区讲座"]},
+{g:"在济赛事线下环节",items:["SDAIC其余赛道决赛（多在10月中旬已办完）","人形机器人足球赛","ROBOCON","新动能双创赛","浪潮杯（无本窗口公开安排）"]},
+{g:"社媒/同城",items:["小红书（站内搜索无结果）","抖音同城（除商业获客沙龙外）","微博（无11–12月AI活动话题）","知乎/B站（仅历史回顾）","济南人社局创业泉城训练营（均在外地）"]},
+{g:"线上渠道已排除项",items:["Kaggle无中文友好专项赛","智谱/月之暗面/MiniMax无官方开放黑客松","Coze国内无11月主题赛公告","CSDN/掘金/InfoQ无日期确定的免费11–12月峰会","腾讯云校园智能体赛仅限重庆等高校（山财不能报）","NLPCC/ChinaSoft/ChinaVR/CCF珠峰等已确认不在济南举办"]}
 ];
 
-/* ============ 渲染 ============ */
-const STMAP={"报名中":"open","即将开始":"soon","即将截止":"closed","已截止":"closed","已结束":"ended"};
-function tag(s){const c=STMAP[s]||"soon";return '<span class="tag '+c+'">'+s+'</span>';}
-function stuTag(v){if(v==="是")return '<span class="tag yes">学生可报</span>';if(v==="否")return '<span class="tag no">不开放</span>';return '<span class="tag maybe">待确认</span>';}
-function feeTag(v){const c=v.indexOf("免费")===0?"free":(v.indexOf("收费")===0?"paid":"unk");return '<span class="fee '+c+'">'+v+'</span>';}
-function lk(u){if(!u||u.indexOf("http")!==0)return '<span class="muted">'+u+'</span>';return '<a href="'+u+'" target="_blank" rel="noopener">打开</a>';}
-function fmtDate(s,e){const d=(x)=>x.slice(5).replace("-","/");return d(s)+(e&&e!==s?"–"+d(e):"");}
-function row(r){return '<tr><td><span class="act-name">'+r.name+'</span><span class="host">'+r.host+'</span>'+(r.note?'<div class="addr" style="margin-top:4px">'+r.note+'</div>':'')+'</td><td><span class="topic">'+r.topic+'</span></td><td><span class="period">'+fmtDate(r.start,r.end)+'</span></td><td><span class="area">'+r.area+'</span><div class="venue">'+r.venue+'</div><div class="addr">'+r.address+'</div></td><td>'+feeTag(r.fee)+'</td><td>'+stuTag(r.student)+'</td><td class="cell-link">'+lk(r.entry)+'</td><td class="cell-link">'+lk(r.src)+'</td><td>'+tag(r.status)+'</td></tr>';}
-function card(r){return '<div class="mini-card"><div class="mc-top"><span class="mc-name">'+r.name+'</span>'+tag(r.status)+'</div><div class="mc-row"><b>主办：</b>'+r.host+'</div><div class="mc-row"><b>主题：</b>'+r.topic+'</div><div class="mc-row"><b>时间：</b>'+fmtDate(r.start,r.end)+'　<b>费用：</b>'+r.fee+'　'+stuTag(r.student)+'</div><div class="mc-row"><b>地点：</b>'+r.area+' '+r.venue+'，'+r.address+'</div><div class="mc-row"><b>入口：</b>'+lk(r.entry)+'　<b>来源：</b>'+lk(r.src)+'</div>'+(r.note?'<div class="mc-row" style="color:#8a5a1d">备注：'+r.note+'</div>':'')+'</div>';}
 
-let curArea="全部",quick="";
-function areaOf(a){
-  if(a.indexOf("章丘")===0)return "章丘";
-  if(a.indexOf("高新")===0)return "高新软件园";
-  if(a.indexOf("历下")===0)return "历下";
-  if(a.indexOf("历城")===0)return "历城";
-  if(a.indexOf("线上")===0)return "线上/济南";
-  return "待确认";
+/* ===================== 渲染 ===================== */
+const esc=s=>String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+function feeKeyOf(d){if(d.feeKey)return d.feeKey;const f=d.fee||'';if(f.indexOf('免费')===0)return'free';if(f.indexOf('收费')===0)return'paid';return'unk';}
+function areaKeyOf(d){if(d.areaKey)return d.areaKey;const a=(d.area||'')+d.name;
+ if(a.indexOf('章丘')>=0)return'章丘';if(a.indexOf('高新')>=0)return'高新软件园';
+ if(a.indexOf('历城')>=0)return'历城';if(a.indexOf('历下')>=0)return'历下';
+ if(a.indexOf('起步')>=0)return'起步区';if(a.indexOf('线上')>=0)return'线上';return'待确认';}
+function stKeyOf(d){if(d.stKey)return d.stKey;const s=d.status||'';
+ if(s.indexOf('本周截止')>=0)return'hot';
+ if(s.indexOf('下届')>=0)return'next';
+ if(s.indexOf('已截止')>=0||s.indexOf('已结束')>=0)return'ended';
+ if(s.indexOf('即将开始')>=0)return'soon';
+ if(s.indexOf('报名中')>=0||s.indexOf('进行中')>=0)return'open';
+ if(s.indexOf('长期')>=0)return'long';
+ return'long';}
+const VT={'强烈推荐':'t1','推荐':'t2','顺路可去':'t3','观望':'t4','别报':'t5','已结束别跑':'t5'};
+const STLABEL={hot:'本周截止',open:'报名中',soon:'即将开始',long:'长期有效',ended:'已结束',next:'下届预告'};
+const isUrl=u=>typeof u==='string'&&/^https?:\/\//.test(u);
+
+function liArr(a){return (a||[]).map(x=>'<li>'+esc(x)+'</li>').join('');}
+function linkHtml(label,url){
+ if(isUrl(url))return'<span class="lk"><b>'+label+'：</b><a href="'+esc(url)+'" target="_blank" rel="noopener noreferrer">'+esc(url)+'</a></span>';
+ return'<span class="lk"><b>'+label+'：</b><span>'+esc(url||'主办方未公布')+'</span></span>';
 }
-function passFilter(r,q){
-  const ar=areaOf(r.area);
-  if(curArea!=="全部"&&ar!==curArea)return false;
-  if(quick==="free"&&r.fee.indexOf("免费")!==0)return false;
-  if(quick==="student"&&r.student!=="是")return false;
-  if(q){const b=(r.name+r.host+r.topic+r.venue+r.area+r.address+r.note).toLowerCase();if(b.indexOf(q)<0)return false;}
-  return true;
+function cardHTML(d,num,online,nextFlag,endedFlag){
+ const fk=feeKeyOf(d),ak=areaKeyOf(d),sk=nextFlag?'next':(endedFlag?'ended':stKeyOf(d)),ended=endedFlag||sk==='ended';
+ const stuOk=d.student&&(d.student.indexOf('是')===0||d.student.indexOf('不限')===0);
+ const badges=[];
+ badges.push('<span class="bd '+sk+'">'+esc(STLABEL[sk]||d.status)+'</span>');
+ if(fk==='free')badges.push('<span class="bd free">免费</span>');
+ if(stuOk)badges.push('<span class="bd stu">学生可报</span>');
+ if(online)badges.push('<span class="bd online">线上</span>');
+ else if(d.area)badges.push('<span class="bd area">'+esc(d.area)+'</span>');
+ let info='';
+ if(online){
+  info='<div class="info-grid"><span class="it"><b>时间</b><span>'+esc(d.time)+'</span></span>'
+   +'<span class="it"><b>费用</b><span class="fee-v '+fk+'">'+esc(d.fee)+'</span></span>'
+   +'<span class="it"><b>面向</b><span>'+esc(d.student)+'</span></span></div>';
+ }else{
+  info='<div class="info-grid"><span class="it"><b>时间</b><span>'+esc(d.time)+'</span></span>'
+   +'<span class="it"><b>费用</b><span class="fee-v '+fk+'">'+esc(d.fee)+'</span></span>'
+   +'<span class="it"><b>面向</b><span>'+esc(d.student)+'</span></span>'
+   +'<span class="it loc"><b>地点</b><span>'+esc(d.venue)+'　'+esc(d.address)+'</span></span></div>';
+ }
+ const note=d.note?'<div style="font-size:12.5px;color:var(--ink-3);margin-top:9px;line-height:1.6">核验备注：'+esc(d.note)+'</div>':'';
+ const cls='card'+(ended?' ended':'')+(nextFlag?' isnext':'');
+ const txt=(d.name+' '+d.host+' '+d.time+' '+d.fee+' '+d.student+' '+d.status+' '+(d.area||'')+' '+(d.venue||'')+' '+(d.address||'')+' '+(d.benefits||[]).join(' ')+' '+(d.pros||[]).join(' ')+' '+(d.cons||[]).join(' ')+' '+d.verdict+' '+(d.note||'')).toLowerCase();
+ return'<article class="'+cls+'" data-stk="'+sk+'" data-area="'+ak+'" data-free="'+(fk==='free'?1:0)+'" data-stu="'+(stuOk?1:0)+'" data-txt="'+esc(txt)+'">'
+  +'<span class="dot"></span>'
+  +'<div class="card-head"><div class="card-num">'+esc(num||'—')+'</div><div class="head-main">'
+  +'<div class="badges">'+badges.join('')+'</div>'
+  +'<h3>'+esc(d.name)+'</h3><div class="host">主办：'+esc(d.host)+'</div>'
+  +info+'</div></div>'
+  +'<div class="blocks">'
+  +'<div class="blk bf"><h4><span class="ic"></span>你能拿到什么 · 福利</h4><ul>'+liArr(d.benefits)+'</ul></div>'
+  +'<div class="blk bp"><h4><span class="ic"></span>优点 / 亮点</h4><ul>'+liArr(d.pros)+'</ul></div>'
+  +'<div class="blk bc"><h4><span class="ic"></span>缺点 / 注意</h4><ul>'+liArr(d.cons)+'</ul></div>'
+  +'<div class="blk bv"><h4>值不值得去</h4><span class="txt">'+esc(d.verdict)+'</span><span class="vtag '+(VT[d.vtag]||'t2')+'">'+esc(d.vtag||'推荐')+'</span></div>'
+  +'</div>'
+  +note
+  +'<div class="links">'+linkHtml(online?'报名/参与入口':'报名入口',d.entry)+linkHtml('来源',d.src)+'</div>'
+  +'</article>';
 }
-function render(){
-  const q=document.getElementById("search").value.trim().toLowerCase();
-  const data=EV.filter(r=>passFilter(r,q));
-  document.getElementById("ev-tbody").innerHTML=data.map(row).join("")||'<tr><td colspan="9" class="empty">无匹配活动</td></tr>';
-  document.getElementById("ev-cards").innerHTML=data.map(card).join("")||'<div class="empty">无匹配活动</div>';
-  document.getElementById("ev-count").textContent="共 "+data.length+" 条（全部 "+EV.length+" 条）";
+
+const GROUPS=[['week','box-week'],['deadline','box-deadline'],['nov','box-nov'],['dec','box-dec'],['ended','box-ended'],['olA','box-olA'],['olB','box-olB'],['olC','box-olC'],['olD','box-olD']];
+function fill(id,html){document.getElementById(id).innerHTML=html;}
+
+/* 线下 */
+['week','deadline','nov','dec'].forEach(k=>{
+ fill('box-'+k,OFF.filter(d=>d.box===k).map(d=>cardHTML(d,d.num,false)).join(''));
+});
+fill('box-ended',ENDED.map(d=>cardHTML(d,'',false,false,true)).join(''));
+/* A 组提示条（已与线下重复/已截止的三条，单列说明不重复发卡） */
+const A_NOTICE='<div class="note-card">'
+ +'<h3 style="font-size:14px">三条说明（不重复发卡）</h3><ul>'
+ +'<li><b>「鲁信杯」AI+产教大赛（10/31截止，免费、给算力、最高10万）</b>与<b>「我在济南刚刚好」AIGC短剧赛（11/15初审）</b>的线上报名，已收录在下方济南线下编号 07 / 09（决赛在济南），入口分别为 aic.sdifs.com 与「海右人才」公众号。</li>'
+ +'<li><b>蚂蚁灵波具身大模型挑战赛</b>报名 10/26 23:59（今日）已截止，错过等下一届，不列入可参加清单。</li>'
+ +'</ul></div>';
+fill('box-olA',A_NOTICE+ONA.map((d,i)=>cardHTML(d,'A'+String(i+1).padStart(2,'0'),true)).join(''));
+fill('box-olB',ONB.map((d,i)=>cardHTML(d,'B'+String(i+1).padStart(2,'0'),true)).join(''));
+fill('box-olC',ONC.map((d,i)=>cardHTML(d,'C'+String(i+1).padStart(2,'0'),true)).join(''));
+fill('box-olD',OND.map((d,i)=>cardHTML(d,'D'+String(i+1).padStart(2,'0'),true)).join('')
+ +NEXT.map((d,i)=>cardHTML(d,'N'+String(i+1).padStart(2,'0'),true,true)).join(''));
+
+/* 计数 */
+const cntMap={week:OFF.filter(d=>d.box==='week').length,deadline:OFF.filter(d=>d.box==='deadline').length,
+ nov:OFF.filter(d=>d.box==='nov').length,dec:OFF.filter(d=>d.box==='dec').length,ended:ENDED.length,
+ olA:ONA.length,olB:ONB.length,olC:ONC.length,olD:OND.length+NEXT.length};
+document.querySelectorAll('[data-cnt]').forEach(el=>{el.textContent=cntMap[el.getAttribute('data-cnt')]+' 条';});
+
+/* 统计 */
+const allFuture=OFF.concat(ONA,ONB,ONC,OND,NEXT);
+const freeN=allFuture.filter(d=>feeKeyOf(d)==='free').length;
+const stuN=allFuture.filter(d=>d.student&&(d.student.indexOf('是')===0||d.student.indexOf('不限')===0)).length;
+document.getElementById('stat-off').textContent=OFF.length;
+document.getElementById('stat-on').textContent=ONA.length+ONB.length+ONC.length+OND.length+NEXT.length;
+document.getElementById('stat-free').textContent=freeN;
+document.getElementById('stat-stu').textContent=stuN;
+
+/* 待复核 / 未发现 */
+fill('pendingList','<ol style="padding-left:20px">'+PEND.map(x=>'<li style="font-size:13.5px;color:var(--ink-2);line-height:1.7;margin-bottom:7px">'+esc(x)+'</li>').join('')+'</ol>');
+fill('nfList',NF.map((g,i)=>'<div class="nf-group"><h3>'+(i+1)+'. '+esc(g.g)+'<span class="num">已排查</span></h3><div class="tagitems">'+g.items.map(x=>'<span class="tagitem">'+esc(x)+'</span>').join('')+'</div></div>').join(''));
+
+/* 片区筛选 chips */
+const AREAS=['章丘','高新软件园','历下','历城','起步区','线上','待确认'];
+const areaEl=document.getElementById('areaChips');
+areaEl.innerHTML='<span class="chip q on" data-area="">全部片区</span>'+AREAS.map(a=>'<span class="chip q" data-area="'+a+'">'+a+'</span>').join('');
+
+/* 筛选逻辑 */
+const F={q:'',st:'',area:'',free:false,stu:false};
+const ST_SEL={'本周截止':'hot','报名中':'open','即将开始':'soon','长期有效':'long','已结束':'ended','下届预告':'next'};
+function applyFilters(){
+ const tokens=F.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+ let total=0;
+ document.querySelectorAll('.card').forEach(c=>{
+  let ok=true;
+  const txt=c.getAttribute('data-txt');
+  if(tokens.length)ok=tokens.every(t=>txt.indexOf(t)>=0);
+  if(ok&&F.st)ok=c.getAttribute('data-stk')===F.st;
+  if(ok&&F.area)ok=c.getAttribute('data-area')===F.area;
+  if(ok&&F.free)ok=c.getAttribute('data-free')==='1';
+  if(ok&&F.stu)ok=c.getAttribute('data-stu')==='1';
+  c.style.display=ok?'':'none';
+  if(ok)total++;
+ });
+ GROUPS.forEach(([headId,boxId])=>{
+  const box=document.getElementById(boxId);
+  const n=box.querySelectorAll('.card:not([style*="none"])').length;
+  // 公告条（A组 list-card）不影响计数
+  const hasNotice=box.querySelector('.list-card');
+  const vis=n>0||(boxId==='box-olA'&&hasNotice&&F.area===''&&F.st===''&&F.q===''&&!F.free&&!F.stu);
+  document.getElementById(headId).style.display=vis?'':'none';
+  box.style.display=vis?'':'none';
+ });
+ document.getElementById('noMatch').style.display=total===0?'block':'none';
 }
-(function(){
-  // 统计
-  document.getElementById("stat-total").textContent=EV.length;
-  document.getElementById("stat-free").textContent=EV.filter(r=>r.fee.indexOf("免费")===0).length;
-  document.getElementById("stat-student").textContent=EV.filter(r=>r.student==="是").length;
-  document.getElementById("stat-ended").textContent=ENDED.length;
-  // 片区 chips
-  const areas=["全部","章丘","高新软件园","历城","历下","线上/济南","待确认"];
-  document.getElementById("area-chips").innerHTML=areas.map(a=>'<span class="chip'+(a==="全部"?" on":"")+'" data-a="'+a+'">'+a+'</span>').join("");
-  document.querySelectorAll("#area-chips .chip").forEach(el=>el.onclick=()=>{
-    document.querySelectorAll("#area-chips .chip").forEach(x=>x.classList.remove("on"));
-    el.classList.add("on");curArea=el.dataset.a;render();
+document.getElementById('search').addEventListener('input',e=>{F.q=e.target.value;applyFilters();});
+document.getElementById('stSel').addEventListener('change',e=>{F.st=ST_SEL[e.target.value]||'';applyFilters();});
+areaEl.addEventListener('click',e=>{
+ const c=e.target.closest('.chip');if(!c)return;
+ areaEl.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');
+ F.area=c.getAttribute('data-area');applyFilters();
+});
+document.getElementById('quickChips').addEventListener('click',e=>{
+ const c=e.target.closest('.chip');if(!c)return;
+ c.classList.toggle('on');
+ const q=c.getAttribute('data-q');F[q]=c.classList.contains('on');applyFilters();
+});
+
+/* 阅读进度条 */
+const progress=document.getElementById('progress');
+addEventListener('scroll',()=>{
+ const h=document.documentElement;
+ const max=h.scrollHeight-h.clientHeight;
+ progress.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+},{passive:true});
+
+/* 回到顶部 */
+const toTop=document.getElementById('toTop');
+addEventListener('scroll',()=>{toTop.classList.toggle('show',scrollY>500);},{passive:true});
+toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+
+/* scrollspy 粘性导航高亮 */
+const navMap={};
+document.querySelectorAll('#navLinks a').forEach(a=>{navMap[a.getAttribute('href').slice(1)]=a;});
+const spyTargets=['week','deadline','nov','dec','ended','olA','olB','olC','olD','pending','notfound']
+ .map(id=>document.getElementById(id)).filter(Boolean);
+if('IntersectionObserver' in window){
+ const io=new IntersectionObserver(es=>{
+  es.forEach(en=>{
+   if(en.isIntersecting){
+    Object.values(navMap).forEach(a=>a.classList.remove('active'));
+    const a=navMap[en.target.id];if(a)a.classList.add('active');
+   }
   });
-  document.querySelectorAll("#quick-chips .chip").forEach(el=>el.onclick=()=>{
-    el.classList.toggle("on");
-    quick=el.classList.contains("on")?el.dataset.q:"";
-    render();
-  });
-  document.getElementById("search").addEventListener("input",render);
-  render();
-  // 已结束
-  document.getElementById("ended-tbody").innerHTML=ENDED.map(row).join("");
-  document.getElementById("ended-cards").innerHTML=ENDED.map(card).join("");
-  // 待复核
-  document.getElementById("pending-list").innerHTML='<div class="list-card"><h3>待复核条目（'+PEND.length+'项）</h3><ul>'+PEND.map(p=>'<li><b>'+p[0]+'</b>：'+p[1]+' <a href="'+p[2]+'" target="_blank" rel="noopener">前往渠道 →</a></li>').join("")+'</ul></div>';
-  // 未发现
-  document.getElementById("nf-list").innerHTML=NF.map(g=>'<div class="nf-group"><h3>'+g.g+'<span class="num">'+g.items.length+' 个渠道/主体</span></h3>'+(g.note?'<div class="gnote">'+g.note+'</div>':'')+'<div class="tags">'+g.items.map(x=>'<span class="tagitem">'+x+'</span>').join("")+'</div></div>').join("");
-})();
+ },{rootMargin:'-90px 0px -72% 0px',threshold:0});
+ spyTargets.forEach(t=>io.observe(t));
+}
+applyFilters();
+
 </script>
 </body>
 </html>
